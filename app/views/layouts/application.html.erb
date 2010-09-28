@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <%= stylesheet_link_tag "main", :cache => "services" %>
+    </head>
+    <body>
+        <div id="page_wrapper">
+            <%= render "shared/headline" %>
+            <%= render "shared/header" %>
+            <%= render "shared/navigation" %>
+            
+            <div id="content_wrapper">
+                <%= content_tag :h1, yield(:title) if title_visible? %>
+                
+                <%- flash.each do |key, message| -%>
+                    <%= content_tag :div, message, :id => :flash, :class => key %>
+                <%- end -%>
+
+                <div id="sidebar">
+                    <%= yield :sidebar %>
+                </div>
+                
+                <div id="content">
+                    <%= yield %>
+                </div>
+            </div>
+        </div>
+        
+        <div id="footer_wrapper">
+            <%= render "shared/footer" %>
+        </div>
+    </body>
+</html>

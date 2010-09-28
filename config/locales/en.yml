@@ -1,5 +1,28 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  shared:
+
+    headline:
+      domains:
+        - ['MICEX',     'http://beta.micex.ru']
+        - ['Passport',  'http://passport-beta.micex.ru']
+        - ['Services',  'http://services-local.micex.ru']
+        - ['PDA',       'http://pda-beta.micex.ru']
+        - ['Forums',    'http://forums-beta.micex.ru']
+        - ['Museum',    'http://museum.micex.ru']
+      locales:
+        - [:ru, 'Русский']
+        - [:en, 'English']
+    
+    header:
+      logo: 'ММВБ - MICEX'
+
+    footer:
+      copyright: |
+        &copy; 1998-%{year} ZAO &laquo;Moscow Interbank Currency Exchange&raquo;
+        "Terms & Conditions of Data Dissemination":http://beta.micex.com/services/marketdata/delayed_data
+      contacts: |
+        Phone: +7 (495) 234-48-11, Fax: +7 (495) 705-96-22
+        "Send the letter":http://beta.micex.com/group/profile/feedback
+      location: |
+        Moscow, Bolshoy Kislovskiy per., 13
+        "MICEX on the map":http://adresa.yandex.ru/company.xml?company=105112633&region=1
