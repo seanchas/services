@@ -3,8 +3,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   before_filter :set_locale
-
+  
+  before_filter :authenticate
+  
 protected
+
+  def unauthenticated
+    redirect_to :root
+  end
 
   def set_locale
     set_default_locale

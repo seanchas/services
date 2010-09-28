@@ -16,6 +16,10 @@ ru:
     header:
       logo: 'ММВБ - MICEX'
 
+      registration: 'Регистрация'
+      login:        'Вход'
+      logout:       'Выход'
+
     footer:
       copyright: |
         &copy; 1998-%{year} ЗАО &laquo;Московская межбанковская валютная биржа&raquo;

@@ -30,4 +30,16 @@ module ApplicationHelper
     end
   end
   
+  def authentication_menu
+    navigation.ul :html => { :class => "tabbed_menu authentication alt_links" } do |ul|
+      if authenticated?
+        ul.li h(authenticated_user.screen_name),  Passport::profile_url, :html => { :class => :user }
+        ul.li t(".logout"),                       Passport::logout_url + "?return_to=#{request.url}"
+      else
+        ul.li t(".login"),                        Passport::login_url + "?return_to=#{request.url}"
+        ul.li t(".registration"),                 Passport::registration_url
+      end
+    end
+  end
+  
 end

@@ -211,21 +211,21 @@ ul.tabbed_menu li {
   width: 0;
 }
 
-#header .authentication_menu {
+#header .authentication {
   float: right;
   line-height: 50px;
 }
 
-#header .authentication_menu li {
+#header .authentication li {
   margin-left: 10px;
 }
 
-#header .authentication_menu li.user a:link,
-#header .authentication_menu li.user a:visited {
+#header .authentication li.user a:link,
+#header .authentication li.user a:visited {
   color: #006299;
 }
 
-#header .authentication_menu li.user a:hover {
+#header .authentication li.user a:hover {
   color: #f02b00;
 }
 
