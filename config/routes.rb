@@ -4,6 +4,6 @@ ActionController::Routing::Routes.draw do |map|
   
   map.root :controller => :welcome
   
-  map.resources :services, :only => [:index, :show], :member => { :offer => :get }
+  map.resources :services, :only => [:index, :show], :member => { :offer => :get, :prices => :get }
   
 end

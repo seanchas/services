@@ -15,6 +15,10 @@ class ServicesController < ApplicationController
   def offer
   end
 
+  # service price list
+  def prices
+  end
+
 private
 
   def find_service

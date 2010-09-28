@@ -1,0 +1,36 @@
+<%- title h(@service.name) %>
+
+<table>
+    <tbody>
+        <%- @service.prices.each do |list| -%>
+            <tr>
+                <td>
+                    <%= h list.id %>
+                </td>
+                <td>
+                    <%= h list.title %>
+                    <br />
+                    <%= list.links.collect { |link| link_to(h(link.label), link.url) }.join(", ") %>
+                </td>
+                <td>
+                    <ul>
+                        <%- list.prices.each do |price| -%>
+                            <li>
+                                <%= h price.label %>
+                            </li>
+                        <%- end -%>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <%- list.prices.each do |price| -%>
+                            <li>
+                                <%= h price.value %>
+                            </li>
+                        <%- end -%>
+                    </ul>
+                </td>
+            </tr>
+        <%- end -%>
+    </tbody>
+</table>

@@ -28,6 +28,10 @@ module Infosell
       @offer ||= Infosell::Service::Offer.for(self)
     end
     
+    def prices
+      @prices ||= Infosell::Service::Price.for(self)
+    end
+    
     def curr=(curr)
       attributes["currency"] = curr.downcase.to_sym
     end
