@@ -1,0 +1,11 @@
+<%- div_for service do -%>
+    
+    <h2>
+        <%= link_to h(service.name), service_path(service) %>
+    </h2>
+    
+    <div class="description">
+        <%= textilize service.description.desc %>
+    </div>
+    
+<%- end -%>
