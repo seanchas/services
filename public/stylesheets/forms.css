@@ -1,0 +1,116 @@
+/* FORMS.CSS */
+
+form {
+  margin: 1em 0 3em;
+  padding: 0;
+}
+
+form input,
+form select,
+form textarea {
+  font-size: 1.1em;
+  margin: 0;
+  padding: .5em;
+}
+
+form .frame {
+  border: 1px solid #c5dcea;
+  margin: 0 -10px 1.5em;
+  padding: 0 9px 0;
+}
+
+form h2 {
+  font-size: 1.1em;
+  margin: 1em 0 .5em;
+}
+
+form dl {
+  margin: 1em 0 2em;
+  padding: 0;
+}
+
+form .frame dl {
+  margin-bottom: 1em;
+}
+
+form dt {
+  clear: left;
+  float: left;
+  line-height: 2em;
+  margin: 0;
+  padding: 0;
+  width: 15em;
+}
+
+form dd {
+  margin: 1em 0 1em 15em;
+  padding: 0;
+}
+
+form em {
+  color: #4d4d4d;
+  display: block;
+  font-size: .9em;
+  font-style: normal;
+  margin: 1em 0;
+}
+
+form dd a {
+  margin-left: 1em;
+}
+
+form dd span.error_message {
+  color: #900;
+}
+
+form dd.submit {
+  margin-top: 2em;
+}
+
+form dd.submit a {
+  font-size: .9em;
+}
+
+/* form dialog */
+
+form.dialog {
+  background-color: #fff;
+  margin: 0;
+  padding: 10px 20px;
+}
+
+form.dialog h2 {
+  background-color: #efefef;
+  margin: -10px -20px 1em;
+  padding: 1em 20px;
+}
+
+form.dialog dl {
+  margin: 0;
+}
+
+form.dialog dt {
+  width: 10em;
+}
+
+form.dialog dd {
+  margin-left: 10em;
+}
+
+form.dialog dd input {
+  width: 20em;
+}
+
+form.dialog dd em {
+  text-align: right;
+}
+
+form.dialog dd.submit {
+  margin-bottom: 1em;
+}
+
+form.dialog dd.submit input {
+  font-size: .9em;
+  width: auto;
+}
+

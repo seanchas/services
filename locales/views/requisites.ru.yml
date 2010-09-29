@@ -1,0 +1,13 @@
+ru:
+  requisites:
+    index:
+      title: Платежные реквизиты
+    new:
+      title: Добавление платежных реквизитов
+
+    
+    payment_requisites:
+      title: Выберите тип реквизитов
+    
+    requisite_form:
+      commit: Добавить реквизиты

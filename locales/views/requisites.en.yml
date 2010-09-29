@@ -1,0 +1,13 @@
+en:
+  requisites:
+    index:
+      title: Payment requisites
+    new:
+      title: New payment requisites
+
+    payment_requisites:
+      title: Choose requisite type
+    
+    requisite_form:
+      commit: Add requisites
+    
