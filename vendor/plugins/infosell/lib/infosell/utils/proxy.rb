@@ -23,7 +23,7 @@ module Infosell
       end
       
       def session
-        @session ||= Infosell::Session.fetch
+        @session ||= Infosell::Utils::Session.fetch
       end
     
     private

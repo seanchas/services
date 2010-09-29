@@ -1,0 +1,15 @@
+<h2>
+    <%= h @requisite.requisite_type.name %>
+</h2>
+
+<%- form_for @requisite, :url => :requisites, :html => { :class => :requisite } do |f| -%>
+
+    <%= render :partial => "requisite_form_group", :collection => @requisite.form.groups, :as => :group, :locals => { :f => f } %>
+
+    <dl>
+        <dd class="submit">
+            <%= f.submit t(".commit"), :id => nil, :name => nil %>
+        </dd>
+    </dl>
+
+<%- end -%>

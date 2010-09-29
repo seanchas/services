@@ -1,10 +1,15 @@
 module Infosell
   
+  module Model
+    autoload :Base,       'infosell/model/base'
+    autoload :XMLBase,    'infosell/model/xml_base'
+  end
+  
   module Utils
     autoload :Manager,    'infosell/utils/manager'
     autoload :Proxy,      'infosell/utils/proxy'
     autoload :Connection, 'infosell/utils/connection'
-    autoload :Schema,     'infosell/utils/schema'
+    autoload :Session,    'infosell/utils/session'
   end
   
   mattr_accessor :type

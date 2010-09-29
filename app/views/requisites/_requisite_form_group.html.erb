@@ -1,0 +1,16 @@
+<h2>
+    <%= h group.title %>
+</h2>
+
+<div class="frame">
+    <dl>
+        <%- group.elements.each do |element| -%>
+            <dt>
+                <%= f.label element.id, element.label %>
+            </dt>
+            <dd>
+                <%= f.send element.value.tag, element.id, element.value.options_for_tag %>
+            </dd>
+        <%- end -%>
+    </dl>
+</div>

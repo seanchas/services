@@ -71,6 +71,10 @@ form dd.submit a {
   font-size: .9em;
 }
 
+form dd.submit input {
+  width: auto !important;
+}
+
 /* form dialog */
 
 form.dialog {
@@ -114,3 +118,21 @@ form.dialog dd.submit input {
   width: auto;
 }
 
+/* requisite form */
+
+form.requisite dt {
+  width: 24em;
+}
+
+form.requisite dd {
+  margin-left: 25em;
+}
+
+form.requisite input,
+form.requisite textarea {
+  width: 20em;
+}
+
+form.requisite textarea {
+  height: 7em;
+}

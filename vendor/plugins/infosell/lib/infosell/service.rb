@@ -1,14 +1,6 @@
 module Infosell
   
-  class Service < Base
-    
-    schema do
-      integer :id
-      integer :kind
-      integer :type
-      string  :name
-      boolean :accessible, :from => :web
-    end
+  class Service < Model::Base
     
     def self.all
       cache do
@@ -38,9 +30,6 @@ module Infosell
     
     def web=(web)
       attributes["accessible"] = web
-    end
-    
-    def blocks=(block)
     end
     
   end
