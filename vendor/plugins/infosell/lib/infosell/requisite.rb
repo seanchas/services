@@ -2,6 +2,15 @@ module Infosell
   class Requisite < Infosell::Model::Base
 
     extend ActiveSupport::Memoizable
+    
+    
+    def self.find(*params)
+      requisites = params.collect do |param|
+        new(Infosell::RequisiteType.for(param.to_s), xmlrpc_with_session("getUserProfile", param.to_s)).tap(&:persist!)
+      end
+      params.size == 1 ? requisites.first : requisites
+    end
+    
 
     delegate :columns, :fields, :to => :form
     
@@ -34,6 +43,7 @@ module Infosell
     end
     
     def create
+      puts "Requisite Type: #{requisite_type}"
       self.class.xmlrpc_with_session("addUser", requisite_type.id, to_infosell)
     rescue XMLRPC::FaultException => e
       ActiveSupport::JSON.decode(e.faultString).each do |key, message|
@@ -47,7 +57,7 @@ module Infosell
     
     def to_infosell
       columns.inject({}) do |container, column|
-        container[column] = send(:"#{column}")
+        container[column] = send(:"#{column}") || ""
         container
       end.merge(:code => to_param)
     end
