@@ -29,7 +29,6 @@ module Infosell
       
       def add(attribute, message)
         self[attribute] << generate_message(attribute, message)
-        puts self.inspect
       end
       
       def generate_message(attribute, message)
