@@ -6,6 +6,6 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :services, :only => [:index, :show], :member => { :offer => :get, :prices => :get }
   
-  map.resources :requisites
+  map.resource :requisite, :only => [:show, :create, :update]
   
 end

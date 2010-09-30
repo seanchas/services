@@ -6,9 +6,8 @@ module Infosell
     
     def self.find(*params)
       requisites = params.collect do |param|
-        new(Infosell::RequisiteType.for(param.to_s), xmlrpc_with_session("getUserProfile", param.to_s)).tap(&:persist!)
-      end
-      params.size == 1 ? requisites.first : requisites
+        new(Infosell::RequisiteType.for(param.to_s), xmlrpc_with_session("getUserProfile", param.to_s)).tap(&:persist!) rescue nil
+      end.compact
     end
     
 
@@ -38,21 +37,25 @@ module Infosell
       errors.empty?
     end
     
-    def create_or_update
-      new_record? ? create : update
+    def update_attributes(attributes = {})
+      self.attributes = attributes
+      save
     end
     
-    def create
-      puts "Requisite Type: #{requisite_type}"
-      self.class.xmlrpc_with_session("addUser", requisite_type.id, to_infosell)
+    def create_or_update
+      new_record? ? create : update
     rescue XMLRPC::FaultException => e
       ActiveSupport::JSON.decode(e.faultString).each do |key, message|
         errors.add(key, message)
       end
     end
     
+    def create
+      self.class.xmlrpc_with_session("addUser", requisite_type.id, to_infosell)
+    end
+    
     def update
-      false
+      self.class.xmlrpc_with_session("updateUserProfile", to_param, to_infosell)
     end
     
     def to_infosell
