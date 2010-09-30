@@ -42,17 +42,21 @@ form dt {
   width: 15em;
 }
 
+form dt.error {
+  color: #900;
+}
+
 form dd {
   margin: 1em 0 1em 15em;
   padding: 0;
 }
 
 form em {
-  color: #4d4d4d;
+  color: #666;
   display: block;
   font-size: .9em;
   font-style: normal;
-  margin: 1em 0;
+  margin: .5em 0 1em;
 }
 
 form dd a {
@@ -73,6 +77,26 @@ form dd.submit a {
 
 form dd.submit input {
   width: auto !important;
+}
+
+/* form errors */
+
+form .errors {
+  border: 1px solid #fcc;
+  color: #900;
+  margin: 2em -10px;
+  padding: .5em 9px;
+}
+
+form .errors ul {
+  margin: 0;
+  padding: 0;
+}
+
+form .errors li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* form dialog */

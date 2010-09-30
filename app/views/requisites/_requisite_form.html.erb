@@ -4,6 +4,8 @@
 
 <%- form_for @requisite, :url => :requisites, :html => { :class => :requisite } do |f| -%>
 
+    <%= f.error_messages :header_message => nil, :message => nil, :class => :errors, :id => :requisite_form_errors %>
+
     <%= render :partial => "requisite_form_group", :collection => @requisite.form.groups, :as => :group, :locals => { :f => f } %>
 
     <dl>

@@ -5,11 +5,16 @@
 <div class="frame">
     <dl>
         <%- group.elements.each do |element| -%>
-            <dt>
+            <%- content_tag :dt, :class => @requisite.errors[element.id].empty? ? nil : :error do -%>
                 <%= f.label element.id, element.label %>
-            </dt>
+            <%- end -%>
             <dd>
                 <%= f.send element.value.tag, element.id, element.value.options_for_tag %>
+                <%- if element.hint? -%>
+                    <em>
+                        <%= h element.hint %>
+                    </em>
+                <%- end -%>
             </dd>
         <%- end -%>
     </dl>

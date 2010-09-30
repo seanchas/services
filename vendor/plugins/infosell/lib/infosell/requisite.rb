@@ -5,10 +5,19 @@ module Infosell
 
     delegate :columns, :fields, :to => :form
     
+    def id
+      code rescue nil
+    end
+    
     def form
       RequisiteForm.for(requisite_type)
     end
     memoize :form
+    
+    
+    def human_attribute_name(attribute)
+      columns.include?(attribute.to_s) ? fields[attribute.to_s].label : attribute.to_s.underscore.humanize
+    end
     
     
     def errors
@@ -40,7 +49,7 @@ module Infosell
       columns.inject({}) do |container, column|
         container[column] = send(:"#{column}")
         container
-      end
+      end.merge(:code => to_param)
     end
 
 

@@ -23,8 +23,17 @@ module Infosell
         all? { |k, v| v && v.empty? }
       end
       
+      def full_messages
+        values.flatten
+      end
+      
       def add(attribute, message)
-        self[attribute] << message
+        self[attribute] << generate_message(attribute, message)
+        puts self.inspect
+      end
+      
+      def generate_message(attribute, message)
+        message.sub(/(\#\{field\})/, %("#{@base.human_attribute_name(attribute)}"))
       end
       
     end
