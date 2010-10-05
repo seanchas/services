@@ -160,3 +160,16 @@ form.requisite textarea {
 form.requisite textarea {
   height: 7em;
 }
+
+/* calendar view */
+
+form span.calendar_view {
+  border-bottom: 1px dashed #006299;
+  color: #006299;
+  cursor: pointer;
+}
+
+form span.calendar_view:hover {
+  border-color: #f02b00;
+  color: #f02b00;
+}

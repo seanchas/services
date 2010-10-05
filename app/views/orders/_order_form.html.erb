@@ -46,3 +46,14 @@
     </dl>
 
 <%- end -%>
+
+<script type="text/javascript" charset="utf-8">
+    document.observe("dom:loaded", function(e) {
+        $$("input[data-format=calendar]").each(function(input) {
+            input.hide();
+            var view = new Element('span', { 'class': 'calendar_view' });
+            input.insert({before: view});
+            new Calendar(view, input, { view_format: 'order_form' });
+        });
+    });
+</script>

@@ -5,11 +5,11 @@ class OrdersController < ApplicationController
   end
   
   def new
-    @order = Infosell::Order.new(3, authenticated_user.infosell_requisite)
+    @order = Infosell::Order.new(1, authenticated_user.infosell_requisite)
   end
   
   def create
-    @order = Infosell::Order.new(3, authenticated_user.infosell_requisite, params[:infosell_order])
+    @order = Infosell::Order.new(1, authenticated_user.infosell_requisite, params[:infosell_order])
     if @order.save
       redirect_to :orders
     else
