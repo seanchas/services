@@ -43,6 +43,10 @@ module Infosell
         end
       end
     
+      def known_attributes
+        @known_attributes ||= attributes
+      end
+    
       def to_param
         id.to_s
       end
@@ -63,15 +67,19 @@ module Infosell
         @persisted = true
       end
     
+      def respond_to?(*args)
+        super || known_attributes.include?(args.first.to_s)
+      end
+
       def method_missing(name, *args, &block)
         method_name = name.to_s
         case method_name.last
           when "="
             attributes[method_name.first(-1)] = args.first
           when "?"
-            !!attributes[method_name.first(-1)]
+            !!known_attributes[method_name.first(-1)]
           else
-            attributes.key?(method_name) ? attributes[method_name] : super
+            known_attributes.key?(method_name) ? known_attributes[method_name] : super
         end
       end
     

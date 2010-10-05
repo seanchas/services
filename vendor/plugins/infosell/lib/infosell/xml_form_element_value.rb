@@ -59,7 +59,7 @@ module Infosell
       end
 
       def options_for_tag
-        options.collect { |option| [option.label, option.value] }
+        options.collect { |option| [option.label, option.value.to_i] }
       end
 
     end
@@ -104,7 +104,7 @@ module Infosell
       end
       
       def options_for_tag
-        (@from..@to).collect { |i| [i, i] }
+        (@from..@to).collect { |i| [i, i.to_i] }
       end
       
     end

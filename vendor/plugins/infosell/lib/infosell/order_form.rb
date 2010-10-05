@@ -16,7 +16,7 @@ module Infosell
     
     def fields
       @fields ||= elements.inject({}) do |container, element|
-        container[element.id] = element
+        container[element.id] = element.value.value
         container
       end
     end

@@ -6,7 +6,9 @@
     <td class="title">
         <h2>
             <%= link_to_if order.editable?, order.id, edit_order_path(order) %>
-            <span class="connections">(<%= t(".connections", :count => order.connections) %>)</span>
+            <%- if order.connections > 0 -%>
+                <span class="connections">(<%= t(".connections", :count => order.connections) %>)</span>
+            <%- end -%>
         </h2>
         <p class="blocks">
             <%= order.blocks.collect(&:name).join("<br />") %>

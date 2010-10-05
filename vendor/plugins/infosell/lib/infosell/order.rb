@@ -47,50 +47,34 @@ module Infosell
       @requisite = instance_or_find(requisite, Infosell::Requisite)
     end
     
-    def accept_offer?
-      accept_offer == "1"
-    end
-    
     def form
       @form ||= Infosell::OrderForm.for(service, requisite)
     end
 
     def known_attributes
-      @known_attributes ||= (attributes.collect(&:key) + columns).flatten.compact.uniq
+      @known_attributes ||= attributes.reverse_merge(fields)
     end
     
-    def schema(attribute)
-      attributes[attribute] || fields[attribute].value.value if known_attributes.include?(attribute)
+    def accept_offer?
+      accept_offer == "1"
     end
-    
-    # -- to be removed
-    def granted_from
-      attributes["granted_from"] || fields["granted_from"].value.value
-    end
-    
-    def duration
-      attributes["duration"] || fields["duration"].value.value
-    end
-    
-    def connections
-      attributes["connections"] || fields["connections"].value.value
-    end
-    # -- to be removed
     
     def blocks=(blocks)
-      @blocks = service.blocks.select { |block| blocks.collect { |b| b["id"] }.include?(block.id) }
+      @blocks = nil
+      @blocks_ids = blocks.collect { |block| block["id"] }
     end
     
     def blocks
-      @blocks ||= service.blocks.collect { |block| block.included = blocks_ids.include?(block.id); block }
+      @blocks ||= service.blocks.select { |block| blocks_ids.include?(block.id) }
     end
     
     def blocks_ids
       @blocks_ids ||= []
     end
     
-    def blocks_attributes=(attributes)
-      @blocks_ids = service.blocks.values_at(*attributes.reject { |first, last| last[:included] == "0" }.collect(&:first).collect(&:to_i)).collect(&:id)
+    def blocks_ids=(blocks_ids)
+      @blocks = nil
+      @blocks_ids = blocks_ids.collect(&:to_i).compact.uniq
     end
     
     # saving
@@ -104,6 +88,11 @@ module Infosell
       errors.empty?
     end
     
+    def update_attributes(attributes)
+      self.attributes = attributes
+      save
+    end
+    
     def create_or_update
       new_record? ? create : update
     end
@@ -114,10 +103,17 @@ module Infosell
     end
     
     def update
+      self.class.xmlrpc_with_session("updateOrder", requisite.id, id, to_infosell)
     end
     
     def to_infosell
-      attributes.merge(:block_ids => blocks_ids, :service_id => service.id)
+      {
+        :service_id   => service.id,
+        :block_ids    => blocks.collect(&:id),
+        :duration     => duration,
+        :granted_from => granted_from,
+        :connections  => (connections rescue 0)
+      }
     end
     
   end

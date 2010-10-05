@@ -1,25 +1,22 @@
 <%- form_for @order, :url => @order.new_record? ? :orders : order_path(@order) do |f| -%>
 
     <table class="blocks">
-        <%- f.fields_for :blocks do |builder| -%>
-
-            <%- block = builder.object -%>
-
+        <%= hidden_field_tag "#{dom_class(@order)}[blocks_ids][]", "" %>
+        <%- @order.service.blocks.each do |block| -%>
             <tr>
                 <td>
-                    <%= builder.check_box :included? %>
+                    <%= check_box_tag "#{dom_class(@order)}[blocks_ids][]", block.id, @order.blocks_ids.include?(block.id), :id => nil %>
                 </td>
                 <td>
-                    <%= builder.label :included, block.code %>
+                    <%= h block.code %>
                 </td>
                 <td>
-                    <%= builder.label :included, block.name %>
+                    <%= h block.name %>
                 </td>
                 <td>
-                    <%= builder.label :included, number_to_currency(block.price, :unit => "") %>
+                    <%= number_to_currency(block.price, :unit => "") %>
                 </td>
             </tr>
-        
         <%- end -%>
     </table>
 
