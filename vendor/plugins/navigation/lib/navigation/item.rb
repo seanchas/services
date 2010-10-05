@@ -26,8 +26,9 @@ module Navigation
       html_class << :last     if options[:last]
       html_class << options[:parity]
       html_class << @html_options.delete(:class)
+      @html_options[:class] =  html_class.flatten.compact.collect(&:to_s).uniq.join(' ')
       
-      content_tag name, content, :class => html_class.flatten.compact.collect(&:to_s).uniq.join(' '), *@html_options
+      content_tag name, content, @html_options
     end
     
     def current?

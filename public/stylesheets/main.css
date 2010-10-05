@@ -300,11 +300,30 @@ ul.tabbed_menu li {
   background: none;
 }
 
+#contextual_menu li.current {
+  background: url(/images/contextual_menu_current_bg.png) repeat-x left top;
+  border: 1px solid #cfcfcf;
+  border-width: 0 1px;
+  margin-right: -1px;
+  padding: 0 10px 0 9px;
+  z-index: 1;
+}
+
 #contextual_menu a:link,
 #contextual_menu a:visited,
 #contextual_menu a:hover {
   color: #4d4d4d;
   text-decoration: none;
+}
+
+#contextual_menu a:hover {
+  color: #000;
+}
+
+#contextual_menu li.current a:link,
+#contextual_menu li.current a:visited,
+#contextual_menu li.current a:hover {
+  color: #000;
 }
 
 /* content */

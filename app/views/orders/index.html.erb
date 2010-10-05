@@ -3,3 +3,33 @@
 <%= contextual_menu %>
 
 <%= render "orders" unless @orders.empty? %>
+
+<script type="text/javascript" charset="utf-8">
+    document.on("dom:loaded", function(e) {
+
+        var available_anchors   = ['new', 'opened', 'closed'];
+        
+        function fireSelectTabEvent() { document.fire('orders:select-tab'); }
+        
+        $('contextual_menu').on('click', 'a', function() {
+            (function() {
+                document.fire('orders:anchor-selected');
+            }).defer();
+        });
+        
+        document.on("orders:anchor-selected", function(e) {
+            var anchor = window.location.hash.sub('#', '');
+            document.fire('orders:select-group', {
+                anchor: available_anchors.include(anchor) ? anchor : available_anchors.first()
+            });
+        });
+        
+        document.on("orders:select-group", function(e) {
+            $$('[data-anchor]').invoke('removeClassName', 'current');
+            $$('[data-anchor=' + e.memo.anchor + ']').invoke('addClassName', 'current');
+        });
+        
+        document.fire("orders:anchor-selected");
+        
+    });
+</script>
