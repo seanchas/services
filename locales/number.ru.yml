@@ -1,0 +1,13 @@
+ru:
+  number:
+    format:
+      separator: "."
+      delimiter: " "
+      precision: 3
+    currency:
+      format:
+        format: "%n %u"
+        unit: "руб."
+        separator: "."
+        delimiter: " "
+        precision: 2

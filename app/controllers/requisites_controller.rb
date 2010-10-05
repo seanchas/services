@@ -4,13 +4,13 @@ class RequisitesController < ApplicationController
     if @requisite = authenticated_user.infosell_requisite
       render :edit
     else
-      @requisite = Infosell::Requisite.new(3)
+      @requisite = Infosell::Requisite.new(1)
       render :new
     end
   end
   
   def create
-    @requisite      = Infosell::Requisite.new(3, params[:infosell_requisite])
+    @requisite      = Infosell::Requisite.new(1, params[:infosell_requisite])
     @requisite.code = "#{authenticated_user.email}:#{Time.now.to_s(:number)}"
 
     if @requisite.save

@@ -2,6 +2,8 @@ module Infosell
   
   class Service < Model::Base
     
+    attr_reader :blocks
+    
     def self.all
       cache do
         xmlrpc_with_session("getServiceSet").collect { |attributes| new(attributes).tap(&:persist!) }
@@ -10,6 +12,14 @@ module Infosell
     
     def self.find(param)
       all.find { |service| service.to_param == param.to_s }
+    end
+    
+    def self.find_by_kind_and_type(kind, type)
+      all.detect { |service| service.kind == kind && service.type == type }
+    end
+    
+    def type
+      attributes["type"]
     end
     
     def description
@@ -30,6 +40,10 @@ module Infosell
     
     def web=(web)
       attributes["accessible"] = web
+    end
+    
+    def blocks=(blocks)
+      @blocks = blocks.collect { |block_attributes| Infosell::ServiceBlock.new(block_attributes) }
     end
     
   end

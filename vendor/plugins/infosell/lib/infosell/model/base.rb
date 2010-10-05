@@ -6,7 +6,8 @@ module Infosell
 
 
       def self.cache(*args, &block)
-        Rails.cache.fetch([I18n.locale, args, name.underscore].flatten.compact.join("/"), :expires_in => 1.minute, &block)
+        #Rails.cache.fetch([I18n.locale, args, name.underscore].flatten.compact.join("/"), :expires_in => 1.minute, &block)
+        yield
       end
 
       def self.proxy

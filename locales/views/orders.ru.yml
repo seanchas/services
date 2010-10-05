@@ -1,0 +1,31 @@
+ru:
+  orders:
+    
+    index:
+      title:  'Список заявок'
+      new:    'Оформляемые заявки'
+      opened: 'Действующие заявки'
+      closed: 'Архив заявок'
+    
+    new:
+      title: Оформление заявки
+    
+    order_form:
+      commit: Оформить заявку
+    
+    orders:
+      checkbox:     ''
+      title:        'Заявка'
+      created_at:   'Дата заявки'
+      started_at:   'Начало оказания услуги'
+      finished_at:  'Окончание оказания услуги'
+      accepted_at:  'Дата счета'
+      price:        'Сумма, руб.'
+
+    order:
+      not_confirmed: 'Не оформлен'
+      connections:
+        one:    '%{count} соединение'
+        few:    '%{count} соединения'
+        many:   '%{count} соединений'
+        other:  '%{count} соединения'

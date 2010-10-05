@@ -8,4 +8,6 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resource :requisite, :only => [:show, :create, :update]
   
+  map.resources :orders
+  
 end

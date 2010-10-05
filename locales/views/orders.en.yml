@@ -1,0 +1,20 @@
+en:
+  orders:
+    
+    index:
+      title: 'Order list'
+    
+    orders:
+      checkbox:     ''
+      title:        'Order'
+      created_at:   'Order date'
+      started_at:   'Start date'
+      finished_at:  'Finish date'
+      accepted_at:  'Payment date'
+      price:        'Total, rub.'
+
+    order:
+      not_confirmed: 'Not paid'
+      connections:
+        one:    '%{count} connection'
+        other:  '%{count} connections'

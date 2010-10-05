@@ -1,0 +1,16 @@
+<div class="reshift">
+    <table id="orders">
+        <thead>
+            <tr>
+                <%- [:checkbox, :title, :created_at, :started_at, :finished_at, :accepted_at, :price].each do |column| -%>
+                    <td class="<%= column %>">
+                        <%= t ".#{column}" %>
+                    </td>
+                <%- end -%>
+            </tr>
+        </thead>
+        <tbody>
+            <%= render :partial => "order", :collection => @orders %>
+        </tbody>
+    </table>
+</div>

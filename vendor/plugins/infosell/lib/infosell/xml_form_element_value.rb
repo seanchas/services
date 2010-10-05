@@ -14,18 +14,20 @@ module Infosell
       {}
     end
     
+
     module Text
 
       def parse
         self.value = value.first.content
       end
-      
+
       def tag
         :text_field
       end
 
     end
     
+
     module Textarea
 
       def parse
@@ -38,6 +40,7 @@ module Infosell
 
     end
     
+
     module Select
 
       def parse
@@ -60,6 +63,52 @@ module Infosell
       end
 
     end
+    
+
+    module Checkbox
+      
+      def tag
+        :checkbox
+      end
+      
+    end
+    
+    
+    module Date
+
+      def parse
+        self.value = value.first.content.to_date
+      end
+      
+      def tag
+        :text_field
+      end
+      
+      def options_for_tag
+        { :"data-format" => "calendar" }
+      end
+      
+    end
+    
+    
+    module Range
+      
+      def parse
+        @from = value.first.attribute("from").content
+        @to = value.first.attribute("to").content
+        self.value = value.first.content
+      end
+      
+      def tag
+        :select
+      end
+      
+      def options_for_tag
+        (@from..@to).collect { |i| [i, i] }
+      end
+      
+    end
+    
     
   end
   

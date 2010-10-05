@@ -1,0 +1,74 @@
+/* ORDERS.CSS */
+
+table#orders {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+table#orders tr.odd td {
+  background-color: #f7f7f7;
+}
+
+table#orders thead td {
+  color: #4d4d4d;
+  font-size: .9em;
+  font-weight: normal;
+  padding: 0 10px .5em;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+table#orders thead td.price {
+  text-align: right;
+}
+
+table#orders tbody td {
+  white-space: nowrap;
+  padding: .5em 10px;
+  vertical-align: top;
+}
+
+table#orders tbody td.checkbox {
+  padding-right: 0;
+}
+
+table#orders tbody td.title {
+  white-space: normal;
+}
+
+table#orders tbody td.price {
+  font-weight: bold;
+  text-align: right;
+}
+
+table#orders tbody td.action_date {
+  color: #4d4d4d;
+  font-weight: bold;
+}
+
+table#orders tbody td.not_confirmed {
+  color: #f00;
+}
+
+table#orders h2 {
+  font-size: 1.1em;
+  padding: 0;
+  margin: 0 0 .25em;
+}
+
+table#orders span.connections {
+  color: #4d4d4d;
+  font-size: .75em;
+  font-weight: normal;
+}
+
+table#orders p.blocks {
+  color: #4d4d4d;
+  font-size: .9em;
+  margin: 0;
+}
+
+table#orders input {
+  margin: 0;
+}

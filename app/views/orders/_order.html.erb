@@ -1,0 +1,35 @@
+<tr class="<%= cycle("odd", "even") %>">
+    <td class="checkbox">
+        <%= check_box_tag "orders[]", order.id, false, :id => nil %>
+    </td>
+
+    <td class="title">
+        <h2>
+            <%= link_to_if order.editable?, order.id, edit_order_path(order) %>
+            <span class="connections">(<%= t(".connections", :count => order.connections) %>)</span>
+        </h2>
+        <p class="blocks">
+            <%= order.blocks.collect(&:name).join("<br />") %>
+        </p>
+    </td>
+
+    <td>
+        <%= order.ordered_at %>
+    </td>
+
+    <td class="action_date">
+        <%= order.ordered_from %>
+    </td>
+
+    <td class="action_date">
+        <%= order.ordered_till %>
+    </td>
+
+    <td class="<%= order.access_provided? ? :confirmed : :not_confirmed %>">
+        <%= order.access_provided? ? order.confirmed_at : t(".not_confirmed") %>
+    </td>
+
+    <td class="price">
+        <%= number_to_currency order.total, :unit => "" %>
+    </td>
+</tr>

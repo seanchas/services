@@ -1,0 +1,51 @@
+<%- form_for @order, :url => @order.new_record? ? :orders : order_path(@order) do |f| -%>
+
+    <table class="blocks">
+        <%- f.fields_for :blocks do |builder| -%>
+
+            <%- block = builder.object -%>
+
+            <tr>
+                <td>
+                    <%= builder.check_box :included? %>
+                </td>
+                <td>
+                    <%= builder.label :included, block.code %>
+                </td>
+                <td>
+                    <%= builder.label :included, block.name %>
+                </td>
+                <td>
+                    <%= builder.label :included, number_to_currency(block.price, :unit => "") %>
+                </td>
+            </tr>
+        
+        <%- end -%>
+    </table>
+
+    <dl>
+        <%- @order.form.elements.each do |element| -%>
+            <dt>
+                <%= f.label element.id %>
+            </dt>
+            <dd>
+                <%= f.send element.value.tag, element.id, element.value.options_for_tag %>
+            </dd>
+        <%- end -%>
+    </dl>
+    
+    <%- if @order.new_record? -%>
+        <dl>
+            <dd>
+                <%= f.check_box :accept_offer %>
+            </dd>
+        </dl>
+    <%- end -%>
+
+    <dl>
+        <dd class="submit">
+            <%= f.submit t(".commit") %>
+        </dd>
+    </dl>
+
+<%- end -%>
