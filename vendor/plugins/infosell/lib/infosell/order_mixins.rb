@@ -17,6 +17,14 @@ module Infosell
       attributes["state"] = value.to_sym
     end
     
+    def total
+      attributes["total"] || 0
+    end
+    
+    def discount
+      attributes["discount"] || 0
+    end
+    
     [:usd, :refRequest, :infosell_type].each do |name|
       class_eval <<-METHOD, __FILE__, __LINE__ + 1
         def #{name}=(value);end

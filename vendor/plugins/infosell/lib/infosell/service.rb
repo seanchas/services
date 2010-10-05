@@ -1,6 +1,6 @@
 module Infosell
   
-  class Service < Model::Base
+  class Service < Infosell::Model::Base
     
     attr_reader :blocks
     
@@ -23,15 +23,15 @@ module Infosell
     end
     
     def description
-      @description ||= Infosell::Service::Description.for(self)
+      @description ||= Infosell::ServiceDescription.for(self)
     end
     
     def offer
-      @offer ||= Infosell::Service::Offer.for(self)
+      @offer ||= Infosell::ServiceOffer.for(self)
     end
     
     def prices
-      @prices ||= Infosell::Service::Price.for(self)
+      @prices ||= Infosell::ServicePrice.for(self)
     end
     
     def curr=(curr)

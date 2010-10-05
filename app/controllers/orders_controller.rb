@@ -10,9 +10,12 @@ class OrdersController < ApplicationController
   
   def create
     @order = Infosell::Order.new(1, authenticated_user.infosell_requisite, params[:infosell_order])
+    @order.validate and return if request.xhr?
+
     if @order.save
       redirect_to :orders
     else
+      @order.validate
       render :new
     end
   end
@@ -23,9 +26,13 @@ class OrdersController < ApplicationController
   
   def update
     @order = Infosell::Order.find(authenticated_user.infosell_requisite, params[:id])
-    if @order.update_attributes(params[:infosell_order])
+    @order.attributes = params[:infosell_order]
+    @order.validate and return if request.xhr?
+
+    if @order.save
       redirect_to :orders
     else
+      @order.validate
       render :edit
     end
   end

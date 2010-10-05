@@ -1,0 +1,2 @@
+page.replace "totals_wrapper", :partial => "order_form_totals"
+page.replace "errors_wrapper", :partial => "order_form_errors"

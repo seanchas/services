@@ -1,0 +1,8 @@
+<div id="totals_wrapper" class="wrapper">
+    <span class="total">
+        <%= t ".total" %>: <span id="totals_total"><%= number_to_currency @order.total, :unit => t(".unit") %></span>
+    </span>
+    <%- content_tag :span, :class => :discount, :style => @order.discount == 0 ? "display: none;" : nil do -%>
+        (<%= t ".discount" %>: <span id="totals_discount"><%= number_to_currency @order.discount, :unit => t(".unit") %></span>)
+    <%- end -%>
+</div>

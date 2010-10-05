@@ -1,0 +1,14 @@
+<table class="order_fields striped_table">
+    <tbody>
+        <%- @order.form.elements.each do |element| -%>
+            <tr>
+                <td class="label">
+                    <%= f.label element.id, t(".#{element.id}") %>:
+                </td>
+                <td class="title">
+                    <%= f.send element.value.tag, element.id, element.value.options_for_tag %>
+                </td>
+            </tr>
+        <%- end -%>
+    </tbody>
+</table>

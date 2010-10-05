@@ -79,8 +79,21 @@ module Infosell
     
     # saving
     
+    def human_attribute_name(attribute)
+      columns.include?(attribute.to_s) ? fields[attribute.to_s].label : attribute.to_s.underscore.humanize
+    end
+
     def errors
       @errors ||= Infosell::Model::Errors.new(self)
+    end
+    
+    def validate
+      parameters = to_infosell
+      parameters[:id] = id unless new_record?
+      puts parameters.inspect
+      self.attributes = self.class.xmlrpc_with_session("getUserCartInfo", requisite.id, parameters)
+    rescue XMLRPC::FaultException => e
+      errors.add(:base, e.faultString)
     end
     
     def save
@@ -95,6 +108,8 @@ module Infosell
     
     def create_or_update
       new_record? ? create : update
+    rescue XMLRPC::FaultException => e
+      errors.add(:base, e.faultString)
     end
     
     def create
@@ -111,7 +126,7 @@ module Infosell
         :service_id   => service.id,
         :block_ids    => blocks.collect(&:id),
         :duration     => duration,
-        :granted_from => granted_from,
+        :ordered_from => ordered_from.to_date.to_s(:db),
         :connections  => (connections rescue 0)
       }
     end
@@ -119,4 +134,3 @@ module Infosell
   end
 
 end
-

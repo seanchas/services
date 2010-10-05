@@ -46,6 +46,7 @@ module ApplicationHelper
     navigation.ul :html => { :class => "tabbed_menu" } do |ul|
       ul.li t(:title, :scope => :services), services_path, :services
       ul.li t(:title, :scope => :requisites), requisite_path, :requisites
+      ul.li t(:title, :scope => :orders), orders_path, :orders => [:index, :edit, :update]
     end
   end
   

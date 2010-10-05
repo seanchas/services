@@ -85,7 +85,7 @@ module Infosell
       end
       
       def options_for_tag
-        { :"data-format" => "calendar" }
+        { :"data-format" => "calendar", :style => "display: none;" }
       end
       
     end

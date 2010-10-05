@@ -3,7 +3,7 @@ require 'nokogiri'
 module Infosell
   module Model
   
-    class XMLBase < Base
+    class XMLBase < Infosell::Model::Base
       
       def self.new(xml)
         super(parse(xml.is_a?(String) ? Nokogiri::XML(xml) : xml))

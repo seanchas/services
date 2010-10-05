@@ -1,0 +1,40 @@
+<div class="reshift">
+    <%= hidden_field_tag "#{dom_class(@order)}[blocks_ids][]", "" %>
+    <table class="striped_table">
+        <thead>
+            <tr>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    <%= t(".code") %>
+                </td>
+                <td>
+                    <%= t(".title") %>
+                </td>
+                <td>
+                    <%= t(".price") %>
+                </td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <%- @order.service.blocks.each do |block| -%>
+                <tr class="<%= cycle("odd", "even") %>">
+                    <td class="checkbox first">
+                        <%= check_box_tag "#{dom_class(@order)}[blocks_ids][]", block.id, @order.blocks_ids.include?(block.id), :id => nil %>
+                    </td>
+                    <td class="code">
+                        <%= h block.code %>
+                    </td>
+                    <td class="title">
+                        <%= h block.name %>
+                    </td>
+                    <td class="price">
+                        <%= number_to_currency(block.price, :unit => "") %>
+                    </td>
+                </tr>
+            <%- end -%>
+        </tbody>
+    </table>
+</div>

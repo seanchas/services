@@ -1,0 +1,16 @@
+<div class="reshift">
+    <table class="order_submit">
+        <tr>
+            <td class="totals">
+                <%= render "order_form_totals" %>
+            </td>
+            <td class="controls">
+                <div class="offer">
+                    <%= f.check_box :accept_offer %>
+                    <%= textilize t(:offer, :scope => [:orders, :order_form]) %>
+                </div>
+                <%= f.submit t(".commit"), :id => nil, :name => nil %>
+            </td>
+        </tr>
+    </table>
+</div>

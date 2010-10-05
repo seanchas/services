@@ -35,6 +35,7 @@ table#orders tbody td.checkbox {
 
 table#orders tbody td.title {
   white-space: normal;
+  width: 100%;
 }
 
 table#orders tbody td.price {
@@ -70,5 +71,112 @@ table#orders p.blocks {
 }
 
 table#orders input {
+  margin: 0;
+}
+
+/* basic striped table */
+
+table.striped_table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 1em 0;
+  width: 100%;
+}
+
+table.striped_table tr.odd td {
+  background-color: #f7f7f7;
+}
+
+table.striped_table td {
+  padding: .5em 10px;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+table.striped_table td.first {
+  padding-left: 20px;
+}
+
+table.striped_table td.code {
+  color: #4d4d4d;
+}
+
+table.striped_table td.title {
+  white-space: normal;
+  width: 100%;
+}
+
+table.striped_table td.price {
+  text-align: right;
+}
+
+table.striped_table thead td {
+  color: #4d4d4d;
+  font-size: .9em;
+  padding-top: 0;
+}
+
+table.striped_table input {
+  margin: 0;
+}
+
+/* order fields */
+table.order_fields td {
+  height: 2.5em;
+  padding-top: 0;
+  padding-bottom: 0;
+  vertical-align: middle;
+}
+
+/* order submit */
+
+table.order_submit {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 1em 0;
+  width: 100%;
+}
+
+table.order_submit td {
+  vertical-align: top;
+}
+
+table.order_submit td.totals {
+  padding-right: 5px;
+  white-space: nowrap;
+}
+
+table.order_submit td.totals .wrapper {
+  background-color: #ffe8ac;
+  padding: .75em 25px .75em 10px;
+}
+
+table.order_submit td.totals .total {
+  font-weight: bold;
+}
+
+table.order_submit td.controls {
+  background-color: #fffae6;
+  border: 1px solid #fc0;
+  padding: 2em 10px;
+  text-align: center;
+  white-space: normal;
+  width: 100%;
+}
+
+table.order_submit div.offer {
+  background-color: #fff;
+  text-align: left;
+  margin: -2em -10px 2em;
+  padding: 1em 10px 1em 40px;
+  position: relative;
+}
+
+table.order_submit div.offer input {
+  left: 15px;
+  position: absolute;
+}
+
+table.order_submit div.offer p {
   margin: 0;
 }

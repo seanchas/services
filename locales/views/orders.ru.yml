@@ -1,5 +1,6 @@
 ru:
   orders:
+    title: Заявки
     
     index:
       title:  'Список заявок'
@@ -10,9 +11,35 @@ ru:
     new:
       title: Оформление заявки
     
-    order_form:
-      commit: Оформить заявку
+    edit:
+      title: 'Изменение заявки'
     
+    order_form:
+      offer: >
+        Я подтверждаю свое согласие с условиями предоставления информации и тарифами.
+        Перед оформлением заявки я проверил свои реквизиты и внес необходимые правки (в случае изменения почтовых или банковских реквизитов).
+    
+    order_form_blocks:
+      code:   'Код'
+      title:  'Наименование'
+      price:  'Тариф, рублей в месяц'
+    
+    order_form_fields:
+      ordered_from: 'Начало предоставления услуги'
+      duration:     'Продолжительность'
+      connections:  'Количество соединений'
+    
+    new_order_form_submit:
+      commit: Оформить заявку
+
+    edit_order_form_submit:
+      commit: Сохранить изменения
+    
+    order_form_totals:
+      total:    'Общая сумма'
+      discount: 'Скидка'
+      unit:     'руб.'
+
     orders:
       checkbox:     ''
       title:        'Заявка'
