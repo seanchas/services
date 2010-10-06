@@ -10,30 +10,23 @@
     document.on("dom:loaded", function(e) {
 
         var available_anchors   = ['new', 'opened', 'closed'];
+        var current_anchor      = null;
         
-        function fireSelectTabEvent() { document.fire('orders:select-tab'); }
-        
-        $('contextual_menu').on('click', 'a', function() {
-            (function() {
-                document.fire('orders:anchor-selected');
-            }).defer();
-        });
-        
-        document.on("orders:anchor-selected", function(e) {
-            var anchor = window.location.hash.sub('#', '');
-            document.fire('orders:select-group', {
-                anchor: available_anchors.include(anchor) ? anchor : available_anchors.first()
-            });
-        });
-        
-        document.on("orders:select-group", function(e) {
+        document.on("orders:anchor-changed", function(e) {
             $$('[data-anchor]').invoke('removeClassName', 'current');
-            $$('[data-anchor=' + e.memo.anchor + ']').invoke('addClassName', 'current');
+            $$('[data-anchor=' + current_anchor + ']').invoke('addClassName', 'current');
             $$('[data-state]').invoke('hide');
-            $$('[data-state=' + e.memo.anchor + ']').invoke('show');
+            $$('[data-state=' + current_anchor + ']').invoke('show');
         });
-        
-        document.fire("orders:anchor-selected");
+
+        new PeriodicalExecuter(function() {
+            var anchor = window.location.hash.sub('#', '');
+            anchor = available_anchors.include(anchor) ? anchor : available_anchors.first();
+            if (current_anchor != anchor) {
+                current_anchor = anchor;
+                document.fire("orders:anchor-changed");
+            }
+        }, .2);
         
     });
 </script>

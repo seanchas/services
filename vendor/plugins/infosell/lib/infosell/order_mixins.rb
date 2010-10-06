@@ -25,6 +25,14 @@ module Infosell
       attributes["discount"] || 0
     end
     
+    def connections=(value)
+      attributes["connections"] = value.to_i
+    end
+    
+    def duration=(value)
+      attributes["duration"] = value.to_i
+    end
+    
     [:usd, :refRequest, :infosell_type].each do |name|
       class_eval <<-METHOD, __FILE__, __LINE__ + 1
         def #{name}=(value);end

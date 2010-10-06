@@ -1,2 +1,3 @@
 <%= render "shared/registration_required" unless authenticated? %>
-<%= render "shared/requisite_required" unless authenticated_requisite? %>
+<%= render "shared/requisite_required" unless authenticated_requisite? if authenticated? %>
+<%= render "shared/requisite" if authenticated_requisite? %>

@@ -1,7 +1,11 @@
 <%- div_for service do -%>
     
     <h2>
-        <%= link_to h(service.name), service_path(service) %>
+        <%=
+            link_to_if authenticated_requisite?, h(service.name), new_service_order_path(service) do
+                link_to h(service.name), service_path(service)
+            end
+        -%>
     </h2>
     
     <div class="description">

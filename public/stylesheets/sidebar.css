@@ -46,3 +46,21 @@ div.sidebar div.alert {
 div.sidebar div.alert p.header {
   color: #c00;
 }
+
+div.sidebar div.notice {
+  background-color: #edf5f8;
+  border-color: #c4dde9;
+}
+
+/* required fields */
+
+div.sidebar div.required_fields span {
+  font-style: italic;
+}
+
+span.asterisk {
+  color: #ff6305;
+  font-size: 1.5em;
+  font-weight: bold;
+  vertical-align: middle;
+}

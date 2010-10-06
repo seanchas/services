@@ -202,3 +202,12 @@ table.order_submit div.offer input {
 table.order_submit div.offer p {
   margin: 0;
 }
+
+
+/* delete orders */
+
+p.delete_orders {
+  font-size: .9em;
+  margin: -2.5em 0 0;
+  padding: 0 10px;
+}

@@ -1,0 +1,17 @@
+<div class="block notice">
+    <p class="header">
+        <%= t ".header" %>
+    </p>
+    
+    <p>
+        <%= h authenticated_requisite.name %>
+    </p>
+    
+    <p>
+        <%= h [:country, :zip, :city, :street, :house].collect { |attribute| authenticated_requisite.send attribute rescue nil }.reject(&:blank?).compact.join(", ") %>
+    </p>
+    
+    <p class="footer">
+        <%= t ".footer", :link => requisite_path %>
+    </p>
+</div>

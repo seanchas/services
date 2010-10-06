@@ -17,11 +17,11 @@
             </table>
         <%- end -%>
         
+        <%- if state == :new -%>
+            <p class="delete_orders">
+                <%= link_to_function t(".delete"), "$('new_orders_list').submit()" %>
+            </p>
+        <%- end -%>
     </div>
 
-    <%- if state == :new -%>
-        <p>
-            <%= link_to_function t(".delete"), "$('new_orders_list').submit()" %>
-        </p>
-    <%- end -%>
 <%- end -%>

@@ -3,6 +3,10 @@
 </h2>
 
 <div class="split">
+    <div class="sidebar">
+        <%= render "shared/required_fields" if requisite_form_group_counter == 0 %>
+    </div>
+    
     <div class="content">
         <div class="frame">
             <dl>
@@ -12,6 +16,7 @@
                     <%- end -%>
                     <dd>
                         <%= f.send element.value.tag, element.id, element.value.options_for_tag %>
+                        <%= content_tag :span, "*", :class => :asterisk if element.required? %>
                         <%- if element.hint? -%>
                             <em>
                                 <%= h element.hint %>
