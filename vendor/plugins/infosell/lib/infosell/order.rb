@@ -33,6 +33,13 @@ module Infosell
     end
     
     
+    def self.destroy(requisite, *ids)
+      requisite = Array(instance_or_find(requisite, Infosell::Requisite)).first
+      ids.each do |id|
+        xmlrpc_with_session("deleteOrder", requisite.id, id.to_i)
+      end
+    end
+    
     def initialize(service, requisite, attributes = {})
       self.service    = service
       self.requisite  = requisite

@@ -10,6 +10,6 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resource :requisite, :only => [:show, :create, :update]
   
-  map.resources :orders, :only => [:index, :edit, :update], :collection => { :check => :post }
+  map.resources :orders, :only => [:index, :edit, :update], :collection => { :destroy_many => :delete }
   
 end

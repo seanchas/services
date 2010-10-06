@@ -48,6 +48,7 @@ ru:
       finished_at:  'Окончание оказания услуги'
       accepted_at:  'Дата счета'
       price:        'Сумма, руб.'
+      delete:       'Удалить выбранные заявки'
 
     order:
       not_confirmed: 'Не оформлен'

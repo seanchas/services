@@ -2,7 +2,9 @@
 
 <%= contextual_menu %>
 
-<%= render "orders" unless @orders.empty? %>
+<%- [:new, :opened, :closed].each do |state| -%>
+    <%= render :partial => "orders", :locals => { :state => state, :orders => @orders.select { |order| order.state == state } } %>
+<%- end -%>
 
 <script type="text/javascript" charset="utf-8">
     document.on("dom:loaded", function(e) {
@@ -27,6 +29,8 @@
         document.on("orders:select-group", function(e) {
             $$('[data-anchor]').invoke('removeClassName', 'current');
             $$('[data-anchor=' + e.memo.anchor + ']').invoke('addClassName', 'current');
+            $$('[data-state]').invoke('hide');
+            $$('[data-state=' + e.memo.anchor + ']').invoke('show');
         });
         
         document.fire("orders:anchor-selected");

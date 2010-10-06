@@ -1,16 +1,27 @@
-<div class="reshift">
-    <table id="orders">
-        <thead>
-            <tr>
-                <%- [:checkbox, :title, :created_at, :started_at, :finished_at, :accepted_at, :price].each do |column| -%>
-                    <td class="<%= column %>">
-                        <%= t ".#{column}" %>
-                    </td>
-                <%- end -%>
-            </tr>
-        </thead>
-        <tbody>
-            <%= render :partial => "order", :collection => @orders %>
-        </tbody>
-    </table>
-</div>
+<%- unless orders.empty? -%>
+    <div class="reshift" data-state="<%= state %>" style="display: none;">
+        <%- form_tag :destroy_many_orders, :method => :delete, :id => "#{state}_orders_list" do -%>
+            <table id="orders">
+                <thead>
+                    <tr>
+                        <%- [:checkbox, :title, :created_at, :started_at, :finished_at, :accepted_at, :price].each do |column| -%>
+                            <td class="<%= column %>">
+                                <%= t ".#{column}" %>
+                            </td>
+                        <%- end -%>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%= render :partial => "order", :collection => orders, :locals => { :state => state } %>
+                </tbody>
+            </table>
+        <%- end -%>
+        
+    </div>
+
+    <%- if state == :new -%>
+        <p>
+            <%= link_to_function t(".delete"), "$('new_orders_list').submit()" %>
+        </p>
+    <%- end -%>
+<%- end -%>
