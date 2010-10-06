@@ -1,3 +1,7 @@
 <%- title t(".title") -%>
 
-<%= render :partial => "service", :collection => @services %>
+<%= render "notice" %>
+
+<div class="service_list">
+    <%= render :partial => "service", :collection => @services %>
+</div>
