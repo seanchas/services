@@ -1,5 +1,7 @@
 <%- title h(@service.name) %>
 
+<%= services_contextual_menu @service %>
+
 <div class="description">
     <%= textilize @service.description.full %>
 </div>

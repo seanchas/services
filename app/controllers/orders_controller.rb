@@ -5,17 +5,20 @@ class OrdersController < ApplicationController
   end
   
   def new
-    @order = Infosell::Order.new(1, authenticated_user.infosell_requisite)
+    service = Infosell::Service.find(params[:service_id])
+    redirect_to service_path(service) and return if service.blocks.empty?
+    @order = Infosell::Order.new(service, authenticated_user.infosell_requisite)
   end
   
   def create
-    @order = Infosell::Order.new(1, authenticated_user.infosell_requisite, params[:infosell_order])
+    service = Infosell::Service.find(params[:service_id])
+    @order = Infosell::Order.new(service, authenticated_user.infosell_requisite, params[:infosell_order])
     @order.validate and return if request.xhr?
 
     if @order.save
       redirect_to :orders
     else
-      @order.validate
+      @order.validate if @order.errors.empty?
       render :new
     end
   end

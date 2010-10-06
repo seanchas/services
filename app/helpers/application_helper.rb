@@ -44,10 +44,19 @@ module ApplicationHelper
   
   def main_menu
     navigation.ul :html => { :class => "tabbed_menu" } do |ul|
-      ul.li t(:title, :scope => :services), services_path, :services
+      ul.li t(:title, :scope => :services), services_path, :services, :orders => [:new, :create]
       ul.li t(:title, :scope => :requisites), requisite_path, :requisites
       ul.li t(:title, :scope => :orders), orders_path, :orders => [:index, :edit, :update]
     end
   end
   
+  def services_contextual_menu(service)
+    navigation.ul :html => { :id => :contextual_menu, :class => :tabbed_menu } do |ul|
+      ul.li t(:title, :scope => [:services, :show]), service_path(service), :services => :show
+      ul.li t(:title, :scope => [:orders, :new]), new_service_order_path(service), :orders => [:new, :create] unless service.blocks.empty?
+      ul.li t(:title, :scope => [:services, :offer]), offer_service_path(service), :services => :offer if service.offer?
+      ul.li t(:title, :scope => [:services, :prices]), prices_service_path(service), :services => :prices if service.prices?
+    end
+  end
+
 end

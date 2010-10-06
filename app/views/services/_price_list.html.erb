@@ -1,0 +1,49 @@
+<div class="reshift">
+    <table class="striped_table">
+        <thead>
+            <tr>
+                <td class="title">
+                    <%= t ".title" %>
+                </td>
+                <td class="period">
+                    <%= t ".period" %>
+                </td>
+                <td class="price">
+                    <%= t ".price" %>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <%- @service.prices.each do |list| -%>
+                <tr class="<%= cycle("odd", "even") %>">
+                    <td class="title">
+                        <h3>
+                            <%= h list.title %>
+                        </h3>
+                        <p class="links">
+                            <%= list.links.collect { |link| link_to(h(link.label), link.url) }.join(", ") %>
+                        </p>
+                    </td>
+                    <td class="period">
+                        <ul>
+                            <%- list.prices.each do |price| -%>
+                                <li>
+                                    <%= h price.label %>
+                                </li>
+                            <%- end -%>
+                        </ul>
+                    </td>
+                    <td class="price">
+                        <ul>
+                            <%- list.prices.each do |price| -%>
+                                <li>
+                                    <%= number_to_currency price.value, :unit => "" %>
+                                </li>
+                            <%- end -%>
+                        </ul>
+                    </td>
+                </tr>
+            <%- end -%>
+        </tbody>
+    </table>
+</div>

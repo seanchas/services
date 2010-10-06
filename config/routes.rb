@@ -4,10 +4,12 @@ ActionController::Routing::Routes.draw do |map|
   
   map.root :controller => :welcome
   
-  map.resources :services, :only => [:index, :show], :member => { :offer => :get, :prices => :get }
+  map.resources :services, :only => [:index, :show], :member => { :offer => :get, :prices => :get } do |service|
+    service.resources :orders, :only => [:new, :create]
+  end
   
   map.resource :requisite, :only => [:show, :create, :update]
   
-  map.resources :orders, :collection => { :check => :post }
+  map.resources :orders, :only => [:index, :edit, :update], :collection => { :check => :post }
   
 end

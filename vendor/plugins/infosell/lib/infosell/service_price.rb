@@ -12,8 +12,8 @@ module Infosell
       {
         :id     => xml.attribute("id").content,
         :title  => xml.at_css("title").content,
-        :prices => xml.css("prices price").collect { |node| Base.new(:label => node.attribute("label").content, :value => node.attribute("value").content) },
-        :links  => xml.css("links link").collect { |node| Base.new(:label => node.attribute("label").content, :url => node.attribute("url").content ) }
+        :prices => xml.css("prices price").collect { |node| Infosell::Model::Base.new(:label => node.attribute("label").content, :value => node.attribute("value").content) },
+        :links  => xml.css("links link").collect { |node| Infosell::Model::Base.new(:label => node.attribute("label").content, :url => node.attribute("url").content ) }
       }
     end
     

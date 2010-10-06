@@ -120,6 +120,28 @@ table.striped_table input {
   margin: 0;
 }
 
+table.striped_table ul {
+  margin: 0;
+  padding: 0;
+}
+
+table.striped_table li {
+  list-style: none;
+  margin: .5em 0;
+  padding: 0;
+}
+
+table.striped_table h3 {
+  font-size: 1.2em;
+  font-weight: normal;
+  margin: 0;
+}
+
+table.striped_table p.links {
+  font-size: .9em;
+  margin: .25em 0 0;
+}
+
 /* order fields */
 table.order_fields td {
   height: 2.5em;

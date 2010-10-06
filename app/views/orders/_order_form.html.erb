@@ -1,4 +1,4 @@
-<%- form_for @order, :url => @order.new_record? ? :orders : order_path(@order), :html => { :id => :order_form } do |f| -%>
+<%- form_for @order, :url => @order.new_record? ? service_orders_path(@order.service) : order_path(@order), :html => { :id => :order_form } do |f| -%>
 
     <%= render "order_form_errors" %>
 

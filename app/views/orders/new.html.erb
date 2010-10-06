@@ -1,3 +1,7 @@
-<%- title t(".title") -%>
+<%- title h(@order.service.name) -%>
+
+<%= services_contextual_menu @order.service %>
+
+<%= textilize @order.service.description.short %>
 
 <%= render "order_form" %>

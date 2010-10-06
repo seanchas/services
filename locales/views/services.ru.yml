@@ -1,5 +1,20 @@
 ru:
   services:
     title: 'Платные услуги'
+
     index:
       title: 'Платные услуги'
+    
+    show:
+      title: 'Описание услуги'
+    
+    offer:
+      title: 'Условия предоставления'
+
+    prices:
+      title: 'Тарифы и образцы'
+    
+    price_list:
+      title: Наименование блока
+      period: Срок подключения
+      price: 'Тариф, рублей в месяц'

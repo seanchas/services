@@ -30,8 +30,16 @@ module Infosell
       @offer ||= Infosell::ServiceOffer.for(self)
     end
     
+    def offer?
+      !offer.data.blank?
+    end
+    
     def prices
       @prices ||= Infosell::ServicePrice.for(self)
+    end
+    
+    def prices?
+      !prices.empty?
     end
     
     def curr=(curr)
