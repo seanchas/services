@@ -14,3 +14,6 @@ ru:
     
     requisite_form:
       commit: Добавить реквизиты
+
+    requisite_type:
+      title: Выберите тип пользователя

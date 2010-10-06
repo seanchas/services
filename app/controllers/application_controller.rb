@@ -6,11 +6,9 @@ class ApplicationController < ActionController::Base
   
   before_filter :authenticate
   
+  helper_method :authenticated_requisite, :authenticated_requisite?
+  
 protected
-
-  def unauthenticated
-    redirect_to :root
-  end
 
   def set_locale
     set_default_locale
@@ -30,4 +28,14 @@ protected
     I18n.locale = params[:locale] || I18n.default_locale
   end
 
+
+  def authenticated_requisite
+    authenticated_user.infosell_requisite if authenticated?
+  end
+  alias :authenticated_requisite? :authenticated_requisite
+
+  def authenticated_requisite!
+    redirect_to :root unless authenticated_requisite?
+  end
+  
 end

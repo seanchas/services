@@ -1,16 +1,22 @@
 class RequisitesController < ApplicationController
 
+  before_filter :authenticate!
+
   def show
     if @requisite = authenticated_user.infosell_requisite
       render :edit
     else
-      @requisite = Infosell::Requisite.new(1)
+      @requisite_type = Infosell::RequisiteType.find(params[:requisite_type])
+      @requisite      = Infosell::Requisite.new(@requisite_type) if @requisite_type
       render :new
     end
   end
   
   def create
-    @requisite      = Infosell::Requisite.new(1, params[:infosell_requisite])
+    @requisite_type = Infosell::RequisiteType.find(params[:requisite_type])
+    redirect_to :requisite and return unless @requisite_type
+
+    @requisite      = Infosell::Requisite.new(@requisite_type, params[:infosell_requisite])
     @requisite.code = "#{authenticated_user.email}:#{Time.now.to_s(:number)}"
 
     if @requisite.save

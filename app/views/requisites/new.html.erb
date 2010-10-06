@@ -1,3 +1,4 @@
 <%- title t(".title") -%>
 
-<%= render "requisite_form" %>
+<%= render "requisite_type" unless @requisite %>
+<%= render "requisite_form" if @requisite %>

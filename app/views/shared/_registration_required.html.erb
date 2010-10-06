@@ -1,0 +1,11 @@
+<div class="block alert">
+    <p class="header">
+        <%= t ".header" %>
+    </p>
+    
+    <%= textilize t(".content") %>
+    
+    <p class="footer">
+        <%= t ".footer", :login_link => Passport::login_url + "?return_to=#{request.url}", :registration_link => Passport::registration_url %>
+    </p>
+</div>

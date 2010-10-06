@@ -1,0 +1,12 @@
+/* REQUISITES.CSS */
+
+ul.requisite_types {
+  margin: 0;
+  padding: 0;
+}
+
+ul.requisite_types li {
+  list-style: none;
+  margin: .25em 0;
+  padding: 0;
+}

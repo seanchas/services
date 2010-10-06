@@ -1,6 +1,6 @@
 Passport.configure do |passport|
 
-  passport.failure  :application_controller
+  passport.failure  :welcome_controller
   passport.resource :user
   
   passport.certificate_auth do

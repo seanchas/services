@@ -13,10 +13,12 @@ class ServicesController < ApplicationController
   
   # service offer
   def offer
+    redirect_to service_path(@service) unless @service.offer?
   end
 
   # service price list
   def prices
+    redirect_to service_path(@service) unless @service.prices?
   end
 
 private

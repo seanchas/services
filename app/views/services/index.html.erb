@@ -1,7 +1,18 @@
 <%- title t(".title") -%>
 
-<%= render "notice" %>
+<div class="split">
 
-<div class="service_list">
-    <%= render :partial => "service", :collection => @services %>
+    <div class="sidebar">
+        <%= render "shared/requisite_info" %>
+        <%= render "shared/sidebar_links" %>
+    </div>
+
+    <div class="content">
+        <%= render "notice" %>
+
+        <div class="service_list">
+            <%= render :partial => "service", :collection => @services %>
+        </div>
+    </div>
+    
 </div>

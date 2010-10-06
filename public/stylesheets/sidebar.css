@@ -1,0 +1,48 @@
+/* SIDEBAR.CSS */
+
+/* sidebar links */
+
+ul#sidebar_links {
+  margin: 0 0 1em;
+  padding: 0;
+}
+
+ul#sidebar_links li {
+  background: url(/images/anchor.png) no-repeat left 3px;
+  list-style: none;
+  margin: .75em 0;
+  padding: 0 0 0 10px;
+}
+
+div.sidebar div.block {
+  background-color: #efefef;
+  border: 1px solid #ccc;
+  font-size: .9em;
+  margin: 0 0 1em;
+  padding: 0 9px;
+}
+
+div.sidebar div.block p.header,
+div.sidebar div.block p.footer {
+  background-color: #fff;
+  margin: 0 -9px;
+  padding: 1em 9px;
+}
+
+div.sidebar div.block p.header {
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+div.sidebar div.block p.footer {
+  margin-top: 1em;
+}
+
+div.sidebar div.alert {
+  background-color: #f5e8e6;
+  border-color: #f02b00;
+}
+
+div.sidebar div.alert p.header {
+  color: #c00;
+}

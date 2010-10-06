@@ -1,0 +1,17 @@
+ru:
+  shared:
+    registration_required:
+      header: 'Регистрация'
+      content: |
+        *Внимание*
+        Для оформления заявки на платные услуги ММВБ необходимо...
+      footer: >
+        <a href="%{login_link}">Войти</a> или <a href="%{registration_link}">зарегистрироваться</a>
+    
+    requisite_required:
+      header: 'Платежные реквизиты'
+      content: |
+        *Внимание*
+        Для оформления заявки на платные услуги ММВБ необходимо...
+      footer: >
+        <a href="%{link}">Заполнить</a> платежные реквизиты

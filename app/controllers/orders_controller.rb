@@ -1,5 +1,8 @@
 class OrdersController < ApplicationController
   
+  before_filter :authenticate!
+  before_filter :authenticated_requisite!
+  
   def index
     @orders = Infosell::Order.all(authenticated_user.infosell_requisite)
   end

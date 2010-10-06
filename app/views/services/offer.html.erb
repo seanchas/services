@@ -2,6 +2,14 @@
 
 <%= services_contextual_menu @service %>
 
-<div class="description">
-    <%= textilize @service.offer.data %>
+<div class="split">
+    <div class="sidebar">
+        <%= render "shared/requisite_info" %>
+        <%= render "shared/sidebar_links" %>
+    </div>
+    
+    <div class="content">
+        <%= textilize @service.offer.data %>
+    </div>
 </div>
+

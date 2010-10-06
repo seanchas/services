@@ -2,20 +2,24 @@
     <%= h group.title %>
 </h2>
 
-<div class="frame">
-    <dl>
-        <%- group.elements.each do |element| -%>
-            <%- content_tag :dt, :class => @requisite.errors[element.id].empty? ? nil : :error do -%>
-                <%= f.label element.id, element.label %>
-            <%- end -%>
-            <dd>
-                <%= f.send element.value.tag, element.id, element.value.options_for_tag %>
-                <%- if element.hint? -%>
-                    <em>
-                        <%= h element.hint %>
-                    </em>
+<div class="split">
+    <div class="content">
+        <div class="frame">
+            <dl>
+                <%- group.elements.each do |element| -%>
+                    <%- content_tag :dt, :class => @requisite.errors[element.id].empty? ? nil : :error do -%>
+                        <%= f.label element.id, element.label %>
+                    <%- end -%>
+                    <dd>
+                        <%= f.send element.value.tag, element.id, element.value.options_for_tag %>
+                        <%- if element.hint? -%>
+                            <em>
+                                <%= h element.hint %>
+                            </em>
+                        <%- end -%>
+                    </dd>
                 <%- end -%>
-            </dd>
-        <%- end -%>
-    </dl>
+            </dl>
+        </div>
+    </div>
 </div>

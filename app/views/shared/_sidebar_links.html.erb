@@ -1,0 +1,7 @@
+<ul id="sidebar_links">
+    <%- t(".").each do |pair| -%>
+        <li>
+            <%= link_to pair.first, pair.last %>
+        </li>
+    <%- end -%>
+</ul>

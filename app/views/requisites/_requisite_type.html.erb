@@ -1,0 +1,11 @@
+<h2>
+    <%= t ".title" %>
+</h2>
+
+<ul class="requisite_types">
+    <%- Infosell::RequisiteType.all.each do |requisite_type| -%>
+        <li>
+            <%= link_to h(requisite_type.name), requisite_path(:requisite_type => requisite_type) %>
+        </li>
+    <%- end -%>
+</ul>

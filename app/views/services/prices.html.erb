@@ -2,4 +2,13 @@
 
 <%= services_contextual_menu @service %>
 
-<%= render "price_list" %>
+<div class="split">
+    <div class="sidebar">
+        <%= render "shared/requisite_info" %>
+        <%= render "shared/sidebar_links" %>
+    </div>
+    
+    <div class="content">
+        <%= render "price_list" %>
+    </div>
+</div>

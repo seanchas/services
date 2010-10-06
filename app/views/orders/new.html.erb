@@ -2,6 +2,19 @@
 
 <%= services_contextual_menu @order.service %>
 
-<%= textilize @order.service.description.short %>
+<div class="split">
 
-<%= render "order_form" %>
+    <div class="sidebar">
+        <%= render "shared/requisite_info" %>
+        <%= render "shared/sidebar_links" %>
+    </div>
+
+    <div class="content">
+        <%= textilize @order.service.description.short %>
+
+        <%= render "order_form" %>
+    </div>
+    
+</div>
+
+
