@@ -1,8 +1,15 @@
 en:
   orders:
+    title: 'Orders'
     
     index:
       title: 'Order list'
+      new:    'New orders'
+      opened: 'Active orders'
+      closed: 'Archive'
+    
+    new:
+      title: 'New order'
     
     orders:
       checkbox:     ''
@@ -12,9 +19,36 @@ en:
       finished_at:  'Finish date'
       accepted_at:  'Payment date'
       price:        'Total, rub.'
+      delete:       'Delete checked orders'
 
     order:
       not_confirmed: 'Not paid'
       connections:
         one:    '%{count} connection'
         other:  '%{count} connections'
+    
+    order_form:
+      offer: >
+        Я подтверждаю свое согласие с условиями предоставления информации и тарифами.
+        Перед оформлением заявки я проверил свои реквизиты и внес необходимые правки (в случае изменения почтовых или банковских реквизитов).
+    
+    order_form_blocks:
+      code: 'Code'
+      title: 'Name'
+      price: 'Price'
+    
+    order_form_fields:
+      ordered_from: 'Desired start date'
+      duration: 'Duration'
+      connections: 'Connections'
+
+    order_form_totals:
+      total: 'Total'
+      discount: 'Discount'
+      unit: 'R '
+    
+    new_order_form_submit:
+      commit: 'Add order'
+    
+    edit_order_form_submit:
+      commit: 'Update order'

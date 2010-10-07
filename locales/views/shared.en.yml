@@ -1,0 +1,25 @@
+en:
+  shared:
+    registration_required:
+      header: 'Registration'
+      content: |
+        *Attention*
+        Для оформления заявки на платные услуги ММВБ необходимо...
+      footer: >
+        <a href="%{login_link}">Login</a> or <a href="%{registration_link}">register</a>
+    
+    requisite_required:
+      header: 'Payment requisites'
+      content: |
+        *Attention*
+        Для оформления заявки на платные услуги ММВБ необходимо...
+      footer: >
+        <a href="%{link}">Fill</a> payment requisites
+    
+    requisite:
+      header: 'Payment requisites'
+      footer: >
+        <a href="%{link}">Update</a> payment requisites
+      
+    required_fields:
+      description: 'required fields'

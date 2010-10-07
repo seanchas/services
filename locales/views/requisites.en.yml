@@ -1,9 +1,15 @@
 en:
   requisites:
+    title: 'Payment requisites'
+    
     index:
       title: Payment requisites
+
     new:
       title: New payment requisites
+    
+    edit:
+      title: Edit payment requisites
 
     payment_requisites:
       title: Choose requisite type
