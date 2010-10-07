@@ -27,6 +27,10 @@ module Infosell
         values.flatten
       end
       
+      def count
+        size
+      end
+      
       def add(attribute, message)
         self[attribute] << generate_message(attribute, message)
       end
