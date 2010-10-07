@@ -24,6 +24,7 @@ end
 configuration = [
   'config/database.yml',
   'config/initializers/passport.rb',
+  'config/initializers/infosell.rb',
   'config/environments/production.rb',
   'config/locales/en.yml',
   'config/locales/ru.yml',
