@@ -15,5 +15,6 @@ en:
       title: Choose requisite type
     
     requisite_form:
-      commit: Add requisites
+      create: Add requisites
+      update: Save changes
     

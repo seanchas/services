@@ -12,7 +12,7 @@
 
     <dl>
         <dd class="submit">
-            <%= f.submit t(".commit"), :id => nil, :name => nil %>
+            <%= f.submit t(@requisite.new_record? ? ".create" : ".update"), :id => nil, :name => nil %>
         </dd>
     </dl>
 

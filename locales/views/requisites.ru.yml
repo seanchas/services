@@ -13,7 +13,8 @@ ru:
       title: Выберите тип реквизитов
     
     requisite_form:
-      commit: Добавить реквизиты
+      create: Добавить реквизиты
+      update: Сохранить изменения
 
     requisite_type:
       title: Выберите тип пользователя
