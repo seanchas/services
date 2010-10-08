@@ -10,6 +10,12 @@ module Infosell
       end.compact
     end
     
+    def self.check(param)
+      xmlrpc_with_session("checkUid", param.to_param)
+    rescue XMLRPC::FaultException => e
+      puts e.faultString
+    end
+    
 
     delegate :columns, :fields, :to => :form
     
