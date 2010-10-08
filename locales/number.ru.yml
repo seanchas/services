@@ -8,6 +8,6 @@ ru:
       format:
         format: "%n %u"
         unit: "руб."
-        separator: "."
+        separator: ","
         delimiter: " "
         precision: 2
