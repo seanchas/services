@@ -4,11 +4,6 @@ module Infosell
     
     attr_reader :blocks
     
-    autoload :ServiceBlock,       'infosell/service_block'
-    autoload :ServiceDescription, 'infosell/service_description'
-    autoload :ServiceOffer,       'infosell/service_offer'
-    autoload :ServicePrice,       'infosell/service_price'
-    
     def self.all
       cache do
         xmlrpc_with_session("getServiceSet").collect { |attributes| new(attributes).tap(&:persist!) }
