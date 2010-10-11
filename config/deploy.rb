@@ -5,9 +5,10 @@ set :runner,      :ror
 set :use_sudo,    false
 
 set :deploy_to,   "/export/depo/ror/linux/appservers/#{application}"
-set :deploy_via,  :copy
+set :deploy_via,  :remote_cache
 
 set :scm, :git
+set :scm_verbose, :false
 
 role :web, "blis1"
 role :app, "blis1"

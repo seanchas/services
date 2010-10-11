@@ -12,6 +12,8 @@ module Infosell
     autoload :Session,    'infosell/utils/session'
   end
   
+  autoload :Service, 'infosell/service'
+  
   mattr_accessor :type
   @@type = nil
   
