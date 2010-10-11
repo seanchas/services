@@ -13,6 +13,7 @@ class User < PassportModel
   end
   
   def infosell_requisite
+    Rails.logger.info "Requisites size: #{infosell_requisites.size}"
     infosell_requisites.detect { |requisite| requisite.code == current_user_infosell_requisite.infosell_code } || infosell_requisites.first unless infosell_requisites.empty?
   end
   
