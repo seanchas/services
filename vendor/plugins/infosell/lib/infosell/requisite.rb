@@ -6,7 +6,8 @@ module Infosell
     
     def self.find(*params)
       requisites = params.collect do |param|
-        new(Infosell::RequisiteType.for(param.to_s), xmlrpc_with_session("getUserProfile", param.to_s)).tap(&:persist!) rescue nil
+        puts "Params: #{params.size}"
+        new(Infosell::RequisiteType.for(param.to_s), xmlrpc_with_session("getUserProfile", param.to_s)).tap(&:persist!) # rescue nil
       end.compact
     end
     

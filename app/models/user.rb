@@ -9,7 +9,6 @@ class User < PassportModel
   end
   
   def infosell_requisites
-    Rails.logger.info "Requisites size: #{user_infosell_requisites.size}"
     @infosell_requisites ||= user_infosell_requisites.empty? ? [] : Infosell::Requisite.find(user_infosell_requisites.collect(&:infosell_code))
   end
   
