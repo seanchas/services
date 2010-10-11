@@ -13,7 +13,7 @@ module Infosell
   end
   
   autoload :Service, 'infosell/service'
-  autoload :XmlFormElement, 'infosell/xml_form_element'
+  autoload :XMLFormElement, 'infosell/xml_form_element'
   
   mattr_accessor :type
   @@type = nil
