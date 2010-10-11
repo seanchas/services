@@ -13,6 +13,7 @@ module Infosell
   end
   
   autoload :Service, 'infosell/service'
+  autoload :XMLFormGroup, 'infosell/xml_form_group'
   autoload :XMLFormElement, 'infosell/xml_form_element'
   autoload :XMLFormElementValue, 'infosell/xml_form_element_value'
   
