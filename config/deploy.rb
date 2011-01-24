@@ -8,7 +8,6 @@ set :deploy_to,   "/export/depo/ror/linux/appservers/#{application}"
 set :deploy_via,  :copy
 
 set :scm, :git
-set :scm_verbose, :false
 
 role :web, "blis1"
 role :app, "blis1"
@@ -42,6 +41,21 @@ namespace :deploy do
     end
   end
   
+  task :symlink_migration_configuration, :roles => :db do
+    run <<-CMD
+      if [ -f #{current_release}/config/database.yml ]; then rm -f #{current_release}/config/database.yml; fi; ln -s #{shared_path}/rails/config/database.migrate.yml #{current_release}/config/database.yml
+    CMD
+  end
+  
+  task :symlink_production_configuration, :roles => :db do
+    run <<-CMD
+      if [ -f #{current_release}/config/database.yml ]; then rm -f #{current_release}/config/database.yml; fi; ln -s #{shared_path}/rails/config/database.yml #{current_release}/config/database.yml
+    CMD
+  end
+  
 end
 
-after "deploy:update_code", "deploy:update_configuration"
+before  "deploy:migrate",     "deploy:symlink_migration_configuration"
+after   "deploy:migrate",     "deploy:symlink_production_configuration"
+
+after   "deploy:update_code", "deploy:update_configuration"

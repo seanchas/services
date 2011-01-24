@@ -35,4 +35,4 @@ en:
       - ['Contacts',          'http://www.micex.com/services/marketdata/contacts']
       - ['Samples',           'http://www.micex.com/services/marketdata/payment_documents']
       - ['FAQ',               'http://www.micex.com/services/marketdata/faq']
-      - ['Micex Web Client',  'http://www.micex.com/services/marketdata/software/web_client']
+      - ['Micex Trade Info',  'http://www.micex.com/services/marketdata/software/micextradeinfo']

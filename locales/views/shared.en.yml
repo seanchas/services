@@ -4,7 +4,7 @@ en:
       header: 'Registration'
       content: |
         *Attention*
-        Для оформления заявки на платные услуги ММВБ необходимо...
+        In order to receive MICEX Trading Information, please:
       footer: >
         <a href="%{login_link}">Login</a> or <a href="%{registration_link}">register</a>
     
@@ -12,14 +12,14 @@ en:
       header: 'Payment requisites'
       content: |
         *Attention*
-        Для оформления заявки на платные услуги ММВБ необходимо...
+        In order to receive MICEX Trading Information, please:
       footer: >
-        <a href="%{link}">Fill</a> payment requisites
+        <a href="%{link}">Fill in</a> your payment requisites
     
     requisite:
       header: 'Payment requisites'
       footer: >
-        <a href="%{link}">Update</a> payment requisites
+        <a href="%{link}">Update</a> your payment requisites
       
     required_fields:
       description: 'required fields'
