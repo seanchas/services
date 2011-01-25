@@ -1,0 +1,42 @@
+<%- div_for infosell_resource, :class => :resource do -%>
+
+    <div class="header">
+        <%= h infosell_resource.name %>
+    </div>
+    
+    <div class="details">
+        <p>
+            <label>
+                <%= t "helpers.label.infosell_resource.resource_kind_id" %>:
+            </label>
+            <%= h infosell_resource.kind.name %>
+        </p>
+
+        <p>
+            <label>
+                <%= t "helpers.label.infosell_resource.code" %>:
+            </label>
+            <%= h infosell_resource.code %>
+        </p>
+
+        <p>
+            <label>
+                <%= t "helpers.label.infosell_resource.description_ru" %>:
+            </label>
+            <%= h infosell_resource.description_ru %>
+        </p>
+
+        <p>
+            <label>
+                <%= t "helpers.label.infosell_resource.description_en" %>:
+            </label>
+            <%= h infosell_resource.description_en %>
+        </p>
+    </div>
+    
+    <div class="menu">
+        <%= link_to content_tag(:span, t(".edit")), [:edit, :admin, infosell_resource], :class => :edit, :"data-remote" => true %>
+        <%= link_to content_tag(:span, t(".delete")), [:admin, infosell_resource], :class => :delete, :"data-remote" => true, :"data-method" => :delete, :"data-confirm" => t(".confirm_delete") %>
+    </div>
+
+<%- end -%>

@@ -12,4 +12,10 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :orders, :only => [:index, :edit, :update], :collection => { :destroy_many => :delete }
   
+  map.namespace :admin do |admin|
+    admin.resources :infosell_resources
+    admin.resources :infosell_resources_relations
+    admin.resources :users
+  end
+  
 end

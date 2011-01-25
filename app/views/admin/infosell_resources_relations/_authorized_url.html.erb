@@ -1,0 +1,4 @@
+<%- content_tag_for :li, authorized_url do -%>
+    <%= check_box_tag "authorized_url_id", authorized_url.to_param, authorized_url.infosell_resources_codes.include?(@infosell_resource.code), :id => nil %>
+    <%= h authorized_url.title %>
+<%- end -%>

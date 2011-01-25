@@ -29,8 +29,8 @@ en:
     
     order_form:
       offer: >
-        Я подтверждаю свое согласие с условиями предоставления информации и тарифами.
-        Перед оформлением заявки я проверил свои реквизиты и внес необходимые правки (в случае изменения почтовых или банковских реквизитов).
+        Hereby I confirm my consent to the MICEX Tariffs, Terms and Conditions of providing Market Data and Statistics (trading results).
+        Also I confirm that my personal data indicated in the registration  form (application) are updated and valid for further usage while placing your order for a particular Information unit of MICEX Market Data or Statistics.
     
     order_form_blocks:
       code: 'Code'

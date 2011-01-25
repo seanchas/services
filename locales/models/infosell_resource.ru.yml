@@ -1,0 +1,9 @@
+ru:
+  helpers:
+    label:
+      infosell_resource:
+        code:             'Идентификатор'
+        name:             'Наименование'
+        resource_kind_id: 'Тип ресурса'
+        description_ru:   'Описание на русском языке'
+        description_en:   'Описание на английском языке'

@@ -1,0 +1,10 @@
+<%- title t(".title") -%>
+
+<div class="resources" id="new_resource" style="margin: 1em 0;">
+    <%= render "add" %>
+</div>
+
+<div class="resources resource" id="resources">
+    <%= render :partial => "infosell_resource", :collection => @infosell_resources %>
+</div>
+

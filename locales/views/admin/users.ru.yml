@@ -1,0 +1,10 @@
+ru:
+  admin:
+    users:
+      menu_title: 'Пользователи'
+    
+      index:
+        title: 'Пользователи'
+
+      user:
+        edit: 'Редактировать'

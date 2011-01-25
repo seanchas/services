@@ -1,0 +1,1 @@
+page[dom_id(@infosell_resource)].update(render(:partial => "infosell_resource", :object => @infosell_resource))

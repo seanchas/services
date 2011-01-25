@@ -1,0 +1,28 @@
+ru:
+  admin:
+    infosell_resources:
+      menu_title: 'Блоки платной подписки'
+      
+      index:
+        title: 'Блоки подписки'
+      
+      new:
+        title: 'Добавление блока'
+      
+      edit:
+        title: 'Изменение блока'
+      
+      infosell_resource:
+        edit:           'Редактировать'
+        delete:         'Удалить'
+        confirm_delete: 'Вы уверены?'
+      
+      add:
+        link: 'Добавить блок'
+      
+      form:
+        error:  'Ошибка'
+        create: 'Добавить блок'
+        update: 'Сохранить изменения'
+        or:     'или'
+        cancel: 'Отменить'

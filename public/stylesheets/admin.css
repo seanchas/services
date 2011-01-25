@@ -1,0 +1,280 @@
+/* layout */
+
+html {
+  background: #fff;
+  height: 100%;
+}
+
+body {
+  font-family: 'lucida grande', arial, sans-serif;
+  font-size: 12px;
+  margin: 0;
+}
+
+/* typographics */
+
+a {
+  outline: none;
+}
+
+/* header */
+
+#header {
+  box-shadow: 0 5px 5px #999;
+  -webkit-box-shadow: 0 5px 5px #999;
+  -moz-box-shadow: 0 5px 5px #999;
+}
+
+#header h1 {
+  background: -webkit-gradient(linear, left top, left bottom, from(#20647e), to(#567c93));
+  background: -moz-linear-gradient(top, #20647e, #567c93);
+  color: #8ab4c1;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 40px;
+  margin: 0;
+  padding: 0 20px;
+  text-shadow: 1px 1px 3px #333;
+}
+
+/* main menu */
+
+#navigation ul {
+  background: -webkit-gradient(linear, left top, left bottom, from(#05243b), to(#264e69));
+  background: -moz-linear-gradient(top, #05243b, #264e69);
+  border-top: 1px solid #82b1bc;
+  font-size: 12px;
+  height: 40px;
+  margin: 0;
+  padding: 0 20px;
+}
+
+#navigation li {
+  float: left;
+  list-style: none;
+  margin: 0 3px 0 0;
+  padding: 0;
+  position: relative;
+}
+
+#navigation li a {
+  color: #def9ff;
+  text-decoration: none;
+}
+
+#navigation li a:hover {
+  text-decoration: underline;
+}
+
+#navigation li p {
+  background: -webkit-gradient(linear, left top, left bottom, from(#003c56), to(#005572));
+  background: -moz-linear-gradient(top, #003c56, #005572);
+  display: table-cell;
+  height: 40px;
+  margin: 0;
+  padding: 0 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#navigation li.current {
+  margin-top: -1px;
+}
+
+#navigation li.current a {
+  font-weight: bold;
+  text-shadow: 1px 1px 3px #333;
+}
+
+#navigation li.current p {
+  background: #577d91;
+  border: 1px solid #82b1bc;
+  border-width: 0 1px 1px;
+  height: 43px;
+  padding: 0 19px;
+}
+
+/* content */
+
+#content {
+  padding: 0 2em 2em;
+}
+
+/* resource */
+
+div.resources {
+  width: 50%;
+}
+
+div.resource {
+  margin: 2em 0;
+}
+
+div.resource div.header {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+div.resource div.details {
+  margin: .5em 0 .5em;
+}
+
+div.resource div.details p {
+  font-size: 11px;
+  margin: .5em 0;
+}
+
+div.resource div.details p label {
+  font-weight: bold;
+}
+
+div.resource div.menu {
+  color: #999;
+  font-size: 11px;
+  margin: 5px 0;
+}
+
+div.resource div.menu a {
+  color: #4d4d4d;
+  margin-right: 1em;
+  text-decoration: none;
+}
+
+div.resource div.menu a span {
+  border-bottom: 1px dashed #4d4d4d;
+}
+
+div.resource div.menu a.edit {
+  background: url(/images/admin/edit_icon.png) no-repeat left 2px;
+  padding-left: 13px;
+}
+
+div.resource div.menu a.delete {
+  background: url(/images/admin/delete_icon.png) no-repeat left 2px;
+  padding-left: 12px;
+}
+
+/* new resource */
+
+a.new_resource {
+  background: url(/images/admin/add_icon.png) no-repeat left center;
+  color: #333;
+  font-size: 14px;
+  padding-left: 18px;
+  text-decoration: none;
+}
+
+a.new_resource span {
+  border-bottom: 1px dashed #000;
+}
+
+/* resource form */
+
+form.resource {
+  background: #f1f9ff;
+  border: 1px solid #a5b8ce;
+  margin: 2em 0;
+  padding: 10px 40px 10px 20px;
+}
+
+form.resource .errors {
+  margin-left: 13em;
+}
+
+form.resource .errors p {
+  color: #900;
+  font-weight: bold;
+  margin: 0;
+}
+
+form.resource .errors ul {
+  margin: .25em 0;
+  padding: 0;
+}
+
+form.resource .errors li {
+  color: #c00;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+form.resource dl {
+  margin: 1em 0;
+  padding: 0;
+}
+
+form.resource dt {
+  clear: left;
+  float: left;
+  margin: 3px 0;
+  padding: 0;
+  text-align: right;
+  width: 12em;
+}
+
+form.resource dd {
+  margin: 10px 0 10px 13em;
+  padding: 0;
+}
+
+form.resource dd label {
+  color: #4d4d4d;
+  font-size: 11px;
+}
+
+form.resource dd input,
+form.resource dd textarea,
+form.resource dd select {
+  margin: 0;
+}
+
+form.resource dd input[type=text],
+form.resource dd textarea {
+  font-size: 12px;
+  margin: 0;
+  padding: .25em .5em;
+}
+
+form.resource dl.submit dd {
+  border-top: 1px dotted #a5b8ce;
+  color: #4d4d4d;
+  font-size: 11px;
+  margin-left: 12em;
+  padding-top: 1em;
+  padding-left: 2em;
+}
+
+form.resource dl.submit a.cancel {
+  color: #f00;
+}
+
+/* relations */
+
+div.relations {
+  background: #f1f9ff;
+  border: 1px solid #a5b8ce;
+  margin: 2em 0;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+div.relations input {
+  margin: 0;
+  position: absolute;
+  left: 0;
+}
+
+div.relations ul {
+  margin: 1em;
+  padding: 0 1em 0 0;
+}
+
+div.relations li {
+  list-style: none;
+  margin: .5em 0;
+  padding: 0 0 0 1.5em;
+  position: relative;
+}

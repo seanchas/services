@@ -1,0 +1,20 @@
+<%- div_for user, :class => :resource do -%>
+
+    <div class="header">
+        <%= h user.screen_name %>
+    </div>
+    
+    <div class="details">
+        <p>
+            <%= h user.nickname %>
+        </p>
+        <p>
+            <%= h user.email %>
+        </p>
+    </div>
+    
+    <div class="menu">
+        <%= link_to content_tag(:span, t(".edit")), [:edit, :admin, user], :class => :edit %>
+    </div>
+
+<%- end -%>

@@ -1,0 +1,2 @@
+page["new_resource"].update(render(:partial => "add"))
+page["resources"].insert(:bottom => render(:partial => "infosell_resource", :object => @infosell_resource))

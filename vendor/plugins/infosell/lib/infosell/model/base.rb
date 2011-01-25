@@ -6,8 +6,7 @@ module Infosell
 
 
       def self.cache(*args, &block)
-        #Rails.cache.fetch([I18n.locale, args, name.underscore].flatten.compact.join("/"), :expires_in => 1.minute, &block)
-        yield
+        Rails.cache.fetch([I18n.locale, args, name.underscore].flatten.compact.join("/"), :expires_in => 1.minute, &block)
       end
 
       def self.proxy
@@ -26,6 +25,9 @@ module Infosell
         param.is_a?(klass) ? param : klass.find(param)
       end
       
+      def freeze
+        self
+      end
 
       def instance_or_find(*args)
         self.class.instance_or_find(*args)

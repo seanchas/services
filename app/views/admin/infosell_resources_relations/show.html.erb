@@ -1,0 +1,19 @@
+<%- title h(@infosell_resource.name) -%>
+
+<div class="relations">
+    <%= render :partial => "authorized_url_group", :collection => @authorized_url_groups %>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+    document.on("dom:loaded", function(e) {
+        document.on("change", "input[type=checkbox]", function(e, element) {
+            new Ajax.Request("<%= admin_infosell_resources_relation_path(@infosell_resource) %>", {
+                method: 'put',
+                parameters: {
+                    authorized_url_id: element.value,
+                    state: ['destroy', 'create'][element.checked & 1]
+                }
+            })
+        });
+    });
+</script>

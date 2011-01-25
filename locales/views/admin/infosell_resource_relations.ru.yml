@@ -1,0 +1,11 @@
+ru:
+  admin:
+    infosell_resources_relations:
+      menu_title: 'Связь блоков платной подписки'
+      
+      index:
+        title: 'Блоки подписки'
+        
+      show:
+        title: 'Связи'
+      

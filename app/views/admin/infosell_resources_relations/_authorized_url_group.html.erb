@@ -1,0 +1,11 @@
+<%- div_for authorized_url_group, :class => :resource, :style => "width: #{100 / @authorized_url_groups.size}%; float: left" do -%>
+    
+    <div class="header" style="color: <%= authorized_url_group.color %>;">
+        <%= h authorized_url_group.title %>
+    </div>
+    
+    <ul>
+        <%= render :partial => "authorized_url", :collection => authorized_url_group.authorized_urls %>
+    </ul>
+    
+<%- end -%>

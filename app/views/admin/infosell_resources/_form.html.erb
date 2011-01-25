@@ -1,0 +1,50 @@
+<% form_for @infosell_resource, :url => [:admin, @infosell_resource], :html => { :class => :resource, :"data-remote" => true } do |f| -%>
+
+    <%= f.error_messages :id => nil, :class => :errors, :header_message => nil, :message => t(".error") %>
+
+    <dl>
+        <dt>
+            <%= f.label :code %>:
+        </dt>
+        <dd>
+            <%= f.text_field :code, :size => 50 %>
+        </dd>
+        
+        <dt>
+            <%= f.label :name %>:
+        </dt>
+        <dd>
+            <%= f.text_field :name, :size => 50 %>
+        </dd>
+        
+        <dt>
+            <%= f.label :resource_kind_id %>:
+        </dt>
+        <dd>
+            <%= f.select :resource_kind_id, Infosell::ResourceKind.all.collect { |kind| [kind.name, kind.id] } %>
+        </dd>
+        
+        <dt>
+            <%= f.label :description_ru %>:
+        </dt>
+        <dd>
+            <%= f.text_area :description_ru, :cols => 50, :rows => 5 %>
+        </dd>
+
+        <dt>
+            <%= f.label :description_en %>:
+        </dt>
+        <dd>
+            <%= f.text_area :description_en, :cols => 50, :rows => 5 %>
+        </dd>
+    </dl>
+
+    <dl class="submit">
+        <dd>
+            <%= f.submit t(f.object.new_record? ? ".create" : ".update") %>
+            <%= t ".or" %>
+            <%= link_to t(".cancel"), [:admin, f.object], :class => :cancel, :"data-remote" => true %>
+        </dd>
+    </dl>
+
+<% end -%>

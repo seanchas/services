@@ -1,0 +1,1 @@
+page["new_resource"].update(render(:partial => "form"))
