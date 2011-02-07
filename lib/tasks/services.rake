@@ -1,7 +1,10 @@
 namespace :services do
   
-  task :bootstrap => [:environment] do
-    puts "=== Boostraping services"
+  task :bootstrap => [:bootstrap_users, :bootstrap_relations] do
+  end
+  
+  task :bootstrap_users => [:environment] do
+    puts "=== Boostraping users"
     
     users_count = 0
     requisites_count = 0
@@ -34,6 +37,28 @@ namespace :services do
     puts "=== Checked #{users_count} users"
     puts "=== Found #{requisites_count} requisites"
     
+  end
+  
+  task :bootstrap_relations => [:environment] do
+    puts "=== Bootstraping authorized url relations"
+    
+    class ElementaryResourceRelation < ActiveRecord::Base
+      establish_connection "old_passport"
+    end
+    
+    relations_count = 0
+    
+    ElementaryResourceRelation.find_in_batches do |relations_batch|
+      relations_count += relations_batch.size
+      
+      relations_batch.each do |relation|
+        r = AuthorizedUrlInfosellResource.new(relation.attributes)
+        r.id = relation.id
+        r.save!
+      end
+    end
+    
+    puts "#{relations_count} relations processed"
   end
   
 end

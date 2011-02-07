@@ -9,7 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100930064700) do
+ActiveRecord::Schema.define(:version => 0) do
+
+  create_table "authorized_url_infosell_resources", :force => true do |t|
+    t.integer  "authorized_url_id"
+    t.string   "elementary_resource_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "authorized_url_infosell_resources", ["authorized_url_id", "elementary_resource_id"], :name => "relation_index"
 
   create_table "user_infosell_requisites", :force => true do |t|
     t.integer  "user_id"
@@ -19,6 +28,6 @@ ActiveRecord::Schema.define(:version => 20100930064700) do
     t.datetime "updated_at"
   end
 
-  add_index "user_infosell_requisites", ["user_id"], :name => "index_user_infosell_requisites_on_user_id"
+  add_index "user_infosell_requisites", ["user_id"], :name => "index_services.user_infosell_requisites_on_user_id"
 
 end
