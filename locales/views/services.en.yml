@@ -9,12 +9,12 @@ en:
       title: 'Service description'
     
     prices:
-      title: 'Prices and samples'
+      title: 'Tariffs and samples'
     
     price_list:
       title: 'Name'
       period: 'Period'
-      price: 'Price'
+      price: 'Price (Rubles) per month'
 
     notice:
       notice: |

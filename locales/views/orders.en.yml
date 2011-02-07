@@ -35,7 +35,7 @@ en:
     order_form_blocks:
       code: 'Code'
       title: 'Name'
-      price: 'Price'
+      price: 'Price (Rubles) per month'
     
     order_form_fields:
       ordered_from: 'Desired start date'
