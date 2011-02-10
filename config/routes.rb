@@ -18,4 +18,6 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :users
   end
   
+  map.xmlrpc "admin/xml-rpc", :controller => :welcome, :action => :xmlrpc
+
 end
