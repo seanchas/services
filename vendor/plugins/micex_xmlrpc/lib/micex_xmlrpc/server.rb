@@ -10,7 +10,9 @@ module MicexXMLRPC
       add_handlers
     end
     
-    def process(request)
+    def process(request, user)
+      method, params = parser().parseMethodCall(request.body) 
+      logger.info "#{user.try(:email)} #{method}(#{params.collect(&:inspect).join ', '})"
       super(request.body)
     end
     
@@ -18,6 +20,10 @@ module MicexXMLRPC
       @tasks ||= @handler.collect do |name, task, signature, help|
         Task.new(name, signature, help)
       end
+    end
+    
+    def logger
+      MicexXMLRPC.logger
     end
   
   private

@@ -12,7 +12,7 @@ module MicexXMLRPC
     
     def handle_xmlrpc_request
       response.headers['content-type'] = "text/xml; charset=utf-8"
-      render :xml => MicexXMLRPC.server.process(request)
+      render :xml => MicexXMLRPC.server.process(request, authenticated_user)
     end
     
     def xmlrpc_methods
