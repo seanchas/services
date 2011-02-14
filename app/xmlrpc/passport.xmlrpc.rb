@@ -1,7 +1,7 @@
 namespace :passport do
 
-  task :openSession do |id|
-    id
+  task :openSession do
+    Digest::SHA1.hexdigest(Time.new.to_s)
   end
   
   task :checkSession do |id|
