@@ -16,9 +16,10 @@ en:
     header:
       logo: 'ММВБ - MICEX'
       
-      registration: 'Registration'
-      login:        'Login'
-      logout:       'Logout'
+      profile:      'http://passport-local.micex.com:3000/profile'
+      registration: ['Registration', 'http://passport-local.micex.com:3000/registration']
+      login:        ['Login',        'http://passport-local.micex.com:3000/login']
+      logout:       ['Logout',       'http://passport-local.micex.com:3000/logout']
 
     footer:
       copyright: |
