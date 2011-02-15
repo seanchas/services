@@ -36,3 +36,7 @@ ru:
       - ['Образцы платежных документов',        'http://www.micex.ru/services/marketdata/payment_documents']
       - ['Ответы на часто задаваемые вопросы',  'http://www.micex.ru/services/marketdata/faq']
       - ['Micex Trade Info',                    'http://www.micex.ru/services/marketdata/software/micextradeinfo']
+
+    admin:
+      portals:
+        - ['Паспорт', 'http://passport-local.micex.ru:3000']

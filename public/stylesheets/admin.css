@@ -35,6 +35,16 @@ a {
   margin: 0;
   padding: 0 20px;
   text-shadow: 1px 1px 3px #333;
+  vertical-align: middle;
+}
+
+#header h1 small {
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+#header h1 small a {
+  color: #def9ff;
 }
 
 /* main menu */

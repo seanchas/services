@@ -1,4 +1,12 @@
 <div id="header">
-    <h1><%= t ".title" %></h1>
+    <h1>
+        <%= t ".title" %>
+        <small>
+            <%- t(:portals, :scope => [:shared, :admin]).each do |link| -%>
+                |
+                <%= link_to h(link.first), link.last %>
+            <%- end -%>
+        </small>
+    </h1>
     <%= render "admin/shared/navigation" %>
 </div>
