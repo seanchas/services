@@ -26,6 +26,11 @@ module Infosell
       attributes["resource_kind_id"] = value
     end
     
+    def code=(code)
+      @code_changed = attributes["code"] != code
+      attributes["code"] = code
+    end
+    
     def kind
       @kind ||= Infosell::ResourceKind.find(resource_kind_id)
     end
@@ -54,6 +59,10 @@ module Infosell
     
     def errors
       @errors ||= Infosell::Model::Errors.new(self)
+    end
+    
+    def code_changed?
+      @code_changed
     end
   
   private

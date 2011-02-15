@@ -29,7 +29,15 @@ class Admin::InfosellResourcesController < ApplicationController
   
   def update
     @infosell_resource = Infosell::Resource.find(params[:id])
+    relations = AuthorizedUrlInfosellResource.find_all_by_elementary_resource_id(@infosell_resource.code)
     @infosell_resource.update_attributes!(params[:infosell_resource])
+    
+    AuthorizedUrlInfosellResource.transaction do
+      relations.each do |relation|
+        relation.update_attribute :elementary_resource_id, @infosell_resource.code
+      end
+    end
+    
   rescue Infosell::Resource::Invalid
     render :edit
   end
