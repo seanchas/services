@@ -22,8 +22,6 @@
             },
             
             start: function() {
-                this.position();
-
                 this.bound_onAnchorClick = this.bound_onAnchorClick || this.onAnchorClick.bind(this);
                 this.bound_onWindowClick = this.bound_onWindowClick || this.onWindowClick.bind(this);
                 
@@ -40,11 +38,12 @@
                     offsetLeft:     0,
                     offsetTop:      this.anchor.getHeight() + 2,
                     setHeight:      false,
-                    setWidth:       true
+                    setWidth:       false
                 });
             },
             
             show: function() {
+                this.position();
                 this.element.show();
             },
             
