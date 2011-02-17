@@ -107,7 +107,7 @@ table.striped_table td.title {
 }
 
 table.striped_table td.price {
-  text-align: right;
+  text-align: left;
 }
 
 table.striped_table thead td {

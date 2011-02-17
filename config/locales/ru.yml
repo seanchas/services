@@ -41,3 +41,8 @@ ru:
     admin:
       portals:
         - ['Паспорт', 'http://passport-local.micex.ru:3000']
+    
+    homes:
+      - ['Паспорт', 'http://passport-local.micex.ru:3000/user']
+      - ['Сервисы', 'http://services-local.micex.ru:3000/requisite']
+      - ['Форумы',  'http://forums-local.micex.ru:3000/user']

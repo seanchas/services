@@ -1,0 +1,51 @@
+<div id="homes" style="display: none;">
+    <ul>
+        <%- t(:homes, :scope => :shared).each do |home| -%>
+            <li>
+                <%= link_to h(home.first), home.last %>
+            </li>
+        <%- end -%>
+    </ul>
+</div>
+
+<div id="log" style="position: absolute; left: 10px; top: 10px;">
+</div>
+
+<script type="text/javascript" charset="utf-8">
+    document.on("dom:loaded", function(e) {
+        
+        var Homes = Class.create({
+            initialize: function(element, anchor) {
+                this.element    = $(element);   if (!this.element) return;
+                this.anchor     = $(anchor);    if (!this.anchor) return;
+                this.start();
+            },
+            
+            start: function() {
+                this.position();
+                this.anchor.addClassName('homes_anchor');
+                this.show();
+            },
+            
+            position: function() {
+                this.element.clonePosition(this.anchor, {
+                    offsetLeft:     0,
+                    offsetTop:      this.anchor.getHeight() + 2,
+                    setHeight:      false,
+                    setWidth:       true
+                });
+            },
+            
+            show: function() {
+                this.element.appear({ duration: .25 });
+            },
+            
+            hide: function() {
+                this.element.fade({ duration: .25 });
+            }
+        });
+        
+        //new Homes($('homes'), $('header').down('li.user a'));
+        
+    });
+</script>
