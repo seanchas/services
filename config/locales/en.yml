@@ -37,3 +37,7 @@ en:
       - ['Samples',           'http://www.micex.com/services/marketdata/payment_documents']
       - ['FAQ',               'http://www.micex.com/services/marketdata/faq']
       - ['Micex Trade Info',  'http://www.micex.com/services/marketdata/software/micextradeinfo']
+
+    homes:
+      - ['Passport', 'http://passport-local.micex.com:3000/user']
+      - ['Services', 'http://services-local.micex.com:3000/requisite']

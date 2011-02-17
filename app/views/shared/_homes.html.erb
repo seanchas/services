@@ -23,8 +23,16 @@
             
             start: function() {
                 this.position();
-                this.anchor.addClassName('homes_anchor');
-                this.show();
+
+                this.bound_onAnchorClick = this.bound_onAnchorClick || this.onAnchorClick.bind(this);
+                this.bound_onWindowClick = this.bound_onWindowClick || this.onWindowClick.bind(this);
+                
+                this.bound_onWindowKeyPress = this.bound_onWindowKeyPress || this.onWindowKeyPress.bind(this);
+
+                this.anchor.on("click", this.bound_onAnchorClick);
+
+                document.on("click", this.bound_onWindowClick);
+                document.on("keyup", this.bound_onWindowKeyPress);
             },
             
             position: function() {
@@ -37,15 +45,33 @@
             },
             
             show: function() {
-                this.element.appear({ duration: .25 });
+                this.element.show();
             },
             
             hide: function() {
-                this.element.fade({ duration: .25 });
+                this.element.hide();
+            },
+            
+            visible: function() {
+                return this.element.visible();
+            },
+            
+            onAnchorClick: function(e) {
+                e.stop(); this.visible() ? this.hide() : this.show();
+            },
+            
+            onWindowClick: function(e) {
+                if (e.findElement(this.anchor)) return;
+                this.hide();
+            },
+            
+            onWindowKeyPress: function(e) {
+                if (!this.visible() || e.keyCode != Event.KEY_ESC) return;
+                this.hide();
             }
         });
         
-        //new Homes($('homes'), $('header').down('li.user a'));
+        new Homes($('homes'), $('header').down('li.user a'));
         
     });
 </script>
