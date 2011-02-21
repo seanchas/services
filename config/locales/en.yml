@@ -1,6 +1,9 @@
 en:
   shared:
 
+    passport_js:  'http://passport-beta.micex.com/javascripts/passport/1_7.js'
+    passport_css: 'http://passport-beta.micex.com/stylesheets/authentication.css'
+
     headline:
       domains:
         - ['MICEX',     'http://beta.micex.ru']
