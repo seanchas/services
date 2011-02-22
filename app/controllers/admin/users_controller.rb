@@ -1,8 +1,4 @@
-class Admin::UsersController < ApplicationController
-  
-  helper "admin"
-  
-  layout "admin"
+class Admin::UsersController < Admin::WelcomeController
   
   def index
     @users = User.paginate(:joins => :user_infosell_requisites, :include => :roles, :page => params[:page], :per_page => 20)

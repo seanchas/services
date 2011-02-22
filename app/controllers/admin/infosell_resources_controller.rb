@@ -1,9 +1,5 @@
-class Admin::InfosellResourcesController < ApplicationController
+class Admin::InfosellResourcesController < Admin::WelcomeController
 
-  layout "admin"
-  
-  helper "admin"
-  
   def index
     @infosell_resources = Infosell::Resource.all
   end
