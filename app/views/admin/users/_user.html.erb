@@ -5,6 +5,11 @@
     </div>
     
     <div class="details">
+        <%- if user.admin? -%>
+            <p class="admin">
+                <%= t ".admin" %>
+            </p>
+        <%- end -%>
         <p>
             <%= h user.nickname %>
         </p>

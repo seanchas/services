@@ -2,6 +2,12 @@ class User < PassportModel
   
   passport
   
+  has_and_belongs_to_many :roles, :join_table => "services.roles_users"
+  
+  def admin?
+    roles.collect(&:name).include?("admin")
+  end
+  
   has_many :user_infosell_requisites
   
   has_many :access_flags, :class_name => AuthorizedUrlAccessFlag.to_s

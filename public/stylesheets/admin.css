@@ -136,6 +136,11 @@ div.resource div.details p {
   margin: .5em 0;
 }
 
+div.resource div.details p.admin {
+  color: #060;
+  font-weight: bold;
+}
+
 div.resource div.details p label {
   font-weight: bold;
 }

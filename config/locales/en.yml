@@ -1,8 +1,8 @@
 en:
   shared:
 
-    passport_js:  'http://passport-beta.micex.com/javascripts/passport/1_7.js'
-    passport_css: 'http://passport-beta.micex.com/stylesheets/authentication.css'
+    passport_js:  'http://passport-beta.micex.ru/javascripts/passport.js?locale=en'
+    passport_css: 'http://passport-beta.micex.ru/stylesheets/passport.css'
 
     headline:
       domains:

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20110222162549) do
 
   create_table "authorized_url_infosell_resources", :force => true do |t|
     t.integer  "authorized_url_id"
@@ -19,6 +19,19 @@ ActiveRecord::Schema.define(:version => 0) do
   end
 
   add_index "authorized_url_infosell_resources", ["authorized_url_id", "elementary_resource_id"], :name => "relation_index"
+
+  create_table "roles", :force => true do |t|
+    t.string   "name",       :default => "", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "roles", ["name"], :name => "index_services.roles_on_name", :unique => true
+
+  create_table "roles_users", :id => false, :force => true do |t|
+    t.integer "role_id", :null => false
+    t.integer "user_id", :null => false
+  end
 
   create_table "user_infosell_requisites", :force => true do |t|
     t.integer  "user_id"
