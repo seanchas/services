@@ -1,5 +1,7 @@
 ru:
   shared:
+    title: 'Сервисы'
+    
     registration_required:
       header: 'Регистрация'
       content: |

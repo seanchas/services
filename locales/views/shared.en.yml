@@ -1,5 +1,7 @@
 en:
   shared:
+    title: 'Services'
+    
     registration_required:
       header: 'Registration'
       content: |
