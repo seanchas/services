@@ -14,7 +14,7 @@ Rails::Initializer.run do |config|
   # Add additional load paths for your own custom dirs
   # config.autoload_paths += %W( #{RAILS_ROOT}/extras )
 
-  config.gem "sqlite3-ruby", :lib => "sqlite3"
+  # config.gem "sqlite3-ruby", :lib => "sqlite3"
   config.gem "warden"
   config.gem "nokogiri"
   config.gem "RedCloth"
