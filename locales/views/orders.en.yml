@@ -11,6 +11,9 @@ en:
     new:
       title: 'New order'
     
+    edit:
+      title: 'Edit order'
+    
     orders:
       checkbox:     ''
       title:        'Order'
