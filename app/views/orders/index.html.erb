@@ -1,6 +1,6 @@
 <%- title t(".title") -%>
 
-<%= contextual_menu %>
+<%= contextual_menu(@orders) %>
 
 <%- [:new, :opened, :closed].each do |state| -%>
     <%= render :partial => "orders", :locals => { :state => state, :orders => @orders.select { |order| order.state == state } } %>
@@ -9,7 +9,7 @@
 <script type="text/javascript" charset="utf-8">
     document.on("dom:loaded", function(e) {
 
-        var available_anchors   = ['new', 'opened', 'closed'];
+        var available_anchors   = [<%= @orders.collect(&:state).uniq.collect { |s| "'#{s}'"}.join(", ") %>];
         var current_anchor      = null;
         
         document.on("orders:anchor-changed", function(e) {

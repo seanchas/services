@@ -28,6 +28,9 @@ class User < PassportModel
     infosell_requisites.detect { |requisite| requisite.code == current_user_infosell_requisite.infosell_code } || infosell_requisites.first unless infosell_requisites.empty?
   end
   
+  def infosell_orders
+    @infosell_orders ||= Infosell::Order.all(infosell_requisite) rescue []
+  end
 
   def full_name
     @full_name ||= [last_name, first_name, middle_name].compact.join(" ")

@@ -46,7 +46,7 @@ module ApplicationHelper
     navigation.ul :html => { :class => "tabbed_menu" } do |ul|
       ul.li t(:title, :scope => :services),   services_path,  :services, :orders => [:new, :create]
       ul.li t(:title, :scope => :requisites), requisite_path, :requisites                           if authenticated?
-      ul.li t(:title, :scope => :orders),     orders_path,    :orders => [:index, :edit, :update]   if authenticated_requisite?
+      ul.li t(:title, :scope => :orders),     orders_path,    :orders => [:index, :edit, :update]    unless authenticated_user.infosell_orders.empty? if authenticated_requisite?
     end
   end
   

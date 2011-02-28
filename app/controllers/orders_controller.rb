@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
   
   def index
     @orders = Infosell::Order.all(authenticated_user.infosell_requisite)
+    redirect_to :root if @orders.empty?
   end
   
   def new
