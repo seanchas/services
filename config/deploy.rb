@@ -1,3 +1,6 @@
+set :bundle_cmd,  "/opt/gnu/ror/bin/bundle"
+require 'bundler/capistrano'
+
 set :application, "services"
 set :repository,  "http://github.com/seanchas/services.git"
 set :user,        :ror
