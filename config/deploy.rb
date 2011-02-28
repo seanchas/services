@@ -27,8 +27,7 @@ configuration = [
   'config/initializers/infosell.rb',
   'config/environments/production.rb',
   'config/locales/en.yml',
-  'config/locales/ru.yml',
-  'vendor/rails'
+  'config/locales/ru.yml'
 ]
 
 namespace :deploy do
