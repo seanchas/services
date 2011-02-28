@@ -1,5 +1,3 @@
-set :bundle_cmd,  "/opt/gnu/ror/bin/bundle"
-require 'bundler/capistrano'
 
 set :application, "services"
 set :repository,  "http://github.com/seanchas/services.git"
@@ -16,6 +14,11 @@ role :web, "blis1"
 role :app, "blis1"
 role :db,  "blis1", :primary => true
 
+set :bundle_cmd,  "/opt/gnu/ror/bin/bundle"
+set :bundle_dir, "#{release_path}/vendor/bundle"
+
+#require 'bundler/capistrano'
+
 namespace :deploy do
   task :start do ; end
   task :stop do ; end
@@ -30,7 +33,9 @@ configuration = [
   'config/initializers/infosell.rb',
   'config/environments/production.rb',
   'config/locales/en.yml',
-  'config/locales/ru.yml'
+  'config/locales/ru.yml',
+  'vendor/bundle',
+  'vendor/rails'
 ]
 
 namespace :deploy do
@@ -57,7 +62,17 @@ namespace :deploy do
   
 end
 
+namespace :bundler do
+  
+  task :update, :roles => :app do
+    run <<-CMD
+      cd #{current_release} && #{bundle_cmd} install --deployment --quiet --without development test
+    CMD
+  end
+  
+end
+
 before  "deploy:migrate",     "deploy:symlink_migration_configuration"
 after   "deploy:migrate",     "deploy:symlink_production_configuration"
 
-after   "deploy:update_code", "deploy:update_configuration"
+after   "deploy:update_code", "deploy:update_configuration", "bundler:update"
