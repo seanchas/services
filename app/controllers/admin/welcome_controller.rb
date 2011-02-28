@@ -8,7 +8,7 @@ class Admin::WelcomeController < ApplicationController
 private
 
   def admin_required!
-    redirect_to root_path unless authenticated_user.admin?
+    redirect_to root_path unless authenticated? && authenticated_user.admin?
   end
 
 end
