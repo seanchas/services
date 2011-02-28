@@ -19,7 +19,6 @@ GEM
       activesupport (>= 2.3.7)
       i18n (~> 0.4)
     i18n (0.5.0)
-    mysql (2.8.1)
     nokogiri (1.4.4)
     rack (1.1.0)
     rails (2.3.9)
@@ -43,7 +42,6 @@ PLATFORMS
 DEPENDENCIES
   RedCloth
   formtastic
-  mysql
   nokogiri
   rails (= 2.3.9)
   thin
