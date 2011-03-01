@@ -45,6 +45,6 @@ DEPENDENCIES
   formtastic
   mysql
   nokogiri
-  rails (= 2.3.9)
+  rails (~> 2.3.9)
   thin
   warden

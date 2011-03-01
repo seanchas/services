@@ -1,6 +1,6 @@
 source :gemcutter
 
-gem "rails", "2.3.9"
+gem "rails", "~> 2.3.9"
 
 gem "warden"
 gem "nokogiri"

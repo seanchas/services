@@ -1,3 +1,8 @@
+$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+require 'rvm/capistrano'
+
+set :rvm_ruby_string, "ree@services"
+set :rvm_type,        :user
 
 set :application, "services"
 set :repository,  "http://github.com/seanchas/services.git"
@@ -14,10 +19,10 @@ role :web, "blis1"
 role :app, "blis1"
 role :db,  "blis1", :primary => true
 
-set :bundle_cmd,  "/opt/gnu/ror/bin/bundle"
-set :bundle_dir, "#{release_path}/vendor/bundle"
+#set :bundle_cmd,  "/opt/gnu/ror/bin/bundle"
+#set :bundle_dir, "#{release_path}/vendor/bundle"
 
-#require 'bundler/capistrano'
+require 'bundler/capistrano'
 
 namespace :deploy do
   task :start do ; end
@@ -33,9 +38,7 @@ configuration = [
   'config/initializers/infosell.rb',
   'config/environments/production.rb',
   'config/locales/en.yml',
-  'config/locales/ru.yml',
-  'vendor/bundle',
-  'vendor/rails'
+  'config/locales/ru.yml'
 ]
 
 namespace :deploy do
@@ -66,7 +69,7 @@ namespace :bundler do
   
   task :update, :roles => :app do
     run <<-CMD
-      cd #{current_release} && #{bundle_cmd} install --deployment --quiet --without development test
+      cd #{current_release} && bundle install
     CMD
   end
   
@@ -75,4 +78,4 @@ end
 before  "deploy:migrate",     "deploy:symlink_migration_configuration"
 after   "deploy:migrate",     "deploy:symlink_production_configuration"
 
-after   "deploy:update_code", "deploy:update_configuration", "bundler:update"
+after   "deploy:update_code", "deploy:update_configuration"#, "bundler:update"
