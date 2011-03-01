@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20110222162549) do
     t.datetime "updated_at"
   end
 
-  add_index "roles", ["name"], :name => "index_services.roles_on_name", :unique => true
+  add_index "roles", ["name"], :name => "index_roles_on_name", :unique => true
 
   create_table "roles_users", :id => false, :force => true do |t|
     t.integer "role_id", :null => false
