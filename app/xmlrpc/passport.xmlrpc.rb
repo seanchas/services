@@ -16,5 +16,9 @@ namespace :passport do
       raise XMLRPC::FaultException.new(301, user_id)
     end
   end
+  
+  task :checkUid do |id, email|
+    !!User.find_by_email(email)
+  end
 
 end
