@@ -8,6 +8,9 @@ en:
     show:
       title: 'Service description'
     
+    offer:
+      title: 'Terms'
+
     prices:
       title: 'Tariffs and samples'
     
