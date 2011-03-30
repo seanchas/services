@@ -24,5 +24,11 @@
                 parameters: $('order_form').serialize()
             });
         });
+
+		$('order_form').on('click', 'input[type=checkbox]', function(e) {
+            new Ajax.Request($('order_form').readAttribute('action'), {
+                parameters: $('order_form').serialize()
+            });
+		});
     });
 </script>
