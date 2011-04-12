@@ -1,6 +1,6 @@
 <tr class="<%= cycle("odd", "even") %>">
     <td class="checkbox">
-        <%= check_box_tag "id[]", order.id, false, :id => nil if state == :new %>
+        <%= check_box_tag "id[]", order.id, false, :id => nil if order.editable? %>
     </td>
 
     <td class="title">
