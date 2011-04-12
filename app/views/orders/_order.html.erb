@@ -28,7 +28,7 @@
     </td>
 
     <td class="<%= order.access_provided? ? :confirmed : :not_confirmed %>">
-        <%= order.access_provided? ? order.confirmed_at : t(".not_confirmed") %>
+        <%= order.confirmed_at ? order.confirmed_at : t(".not_confirmed") %>
     </td>
 
     <td class="price">
