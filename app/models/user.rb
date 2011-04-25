@@ -25,7 +25,7 @@ class User < PassportModel
   end
   
   def infosell_requisite
-    infosell_requisites.detect { |requisite| requisite.code == current_user_infosell_requisite.infosell_code } || infosell_requisites.first unless infosell_requisites.empty?
+    infosell_requisites.detect { |requisite| requisite.code == current_user_infosell_requisite.infosell_code } || infosell_requisites.first unless infosell_requisites.empty? rescue nil
   end
   
   def infosell_orders
