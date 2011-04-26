@@ -21,7 +21,7 @@ class User < PassportModel
   end
   
   def infosell_requisites
-    @infosell_requisites ||= user_infosell_requisites.empty? ? [] : Infosell::Requisite.find(user_infosell_requisites.collect(&:infosell_code))
+    @infosell_requisites ||= user_infosell_requisites.empty? ? [] : Infosell::Requisite.find(*user_infosell_requisites.collect(&:infosell_code))
   end
   
   def infosell_requisite
