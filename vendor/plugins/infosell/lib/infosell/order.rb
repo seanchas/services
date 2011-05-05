@@ -14,7 +14,7 @@ module Infosell
       requisite = Array(instance_or_find(requisite, Infosell::Requisite)).first
       
       options[:state] ||= [:new, :opened, :closed]
-      options[:from]  ||= 10.years.ago
+      options[:from]  ||= 1.year.ago
       options[:till]  ||= Time.now
       
       xmlrpc_with_session("getOrderList", requisite.id, [options[:state]].flatten.compact, options[:from].to_date.to_s(:db), options[:till].to_date.to_s(:db)).collect do |attributes|
