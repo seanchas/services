@@ -8,7 +8,7 @@ class User < PassportModel
     roles.collect(&:name).include?("admin")
   end
   
-  has_many :user_infosell_requisites, :order => :created_at
+  has_many :user_infosell_requisites, :order => :updated_at
   
   has_many :access_flags, :class_name => AuthorizedUrlAccessFlag.to_s
   
