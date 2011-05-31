@@ -8,7 +8,7 @@ class User < PassportModel
     roles.collect(&:name).include?("admin")
   end
   
-  has_many :user_infosell_requisites
+  has_many :user_infosell_requisites, :order => :created_at
   
   has_many :access_flags, :class_name => AuthorizedUrlAccessFlag.to_s
   
@@ -17,7 +17,7 @@ class User < PassportModel
   end
   
   def current_user_infosell_requisite
-    @current_infosell_requisite ||= user_infosell_requisites.detect(&:is_current)
+    @current_infosell_requisite ||= user_infosell_requisites.last
   end
   
   def infosell_requisites
