@@ -1,9 +1,9 @@
 source "http://rubygems.org"
 
-gem "rails", "2.3.12"
+gem "rails", "~> 2.3"
 
 gem "warden"
-gem "nokogiri"
+gem "nokogiri", "~> 1.4"
 gem "formtastic"
 gem "mysql"
 

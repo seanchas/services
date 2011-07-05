@@ -44,7 +44,7 @@ DEPENDENCIES
   RedCloth
   formtastic
   mysql
-  nokogiri
-  rails (= 2.3.12)
+  nokogiri (~> 1.4)
+  rails (~> 2.3)
   thin
   warden
