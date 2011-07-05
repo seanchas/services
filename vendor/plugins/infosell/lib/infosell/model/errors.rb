@@ -36,6 +36,7 @@ module Infosell
       end
       
       def generate_message(attribute, message)
+        message = attribute and attribute = :base unless message.present?
         message.sub(/(\#\{field\})/, %("#{@base.human_attribute_name(attribute)}"))
       end
       

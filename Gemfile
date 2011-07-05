@@ -1,6 +1,6 @@
-source :gemcutter
+source "http://rubygems.org"
 
-gem "rails", "~> 2.3"
+gem "rails", "2.3.12"
 
 gem "warden"
 gem "nokogiri"
