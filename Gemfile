@@ -1,9 +1,9 @@
-source "http://rubygems.org"
+source :gemcutter
 
-gem "rails", "~> 2.3"
+gem "rails", "~>2.3"
 
 gem "warden"
-gem "nokogiri", "~> 1.4"
+gem "nokogiri"
 gem "formtastic"
 gem "mysql"
 
