@@ -1,0 +1,13 @@
+ru:
+  layouts:
+    error:
+      title: 'Error'
+
+  welcome:
+    '404':
+      error: 'Page not found - the address used is invalid or this page no longer exists on this website.'
+      home: 'Main page'
+
+    '500':
+      error: 'Server error - try to refresh page in the near future.'
+      home: 'Main page'

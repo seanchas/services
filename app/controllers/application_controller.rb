@@ -8,6 +8,15 @@ class ApplicationController < ActionController::Base
   
   helper_method :authenticated_requisite, :authenticated_requisite?
   
+  def rescue_action_in_public(exception)
+    case exception
+      when ActionController::UnknownAction, ActionController::RoutingError, ActiveRecord::RecordNotFound
+        render :template => 'welcome/404', :layout => 'error'
+      else
+        render :template => 'welcome/500', :layout => 'error'
+    end
+  end
+
 protected
 
   def set_locale
