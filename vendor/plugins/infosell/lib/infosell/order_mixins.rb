@@ -17,6 +17,9 @@ module Infosell
       attributes["state"] = value.to_sym
     end
     
+    def state=(value)
+    end
+    
     def total
       attributes["total"] || 0
     end
