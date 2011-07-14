@@ -2,9 +2,9 @@ module Infosell
   
   class ServicePrice < Infosell::Model::XMLBase
 
-    def self.for(service)
-      cache(service.id) do
-        Nokogiri::XML(xmlrpc_with_session("getPriceList", service.id)).css("elements element").collect { |price_xml| new(price_xml).tap(&:persist!) }
+    def self.for(service, user_id)
+      cache(service.id, user_id) do
+        Nokogiri::XML(xmlrpc_with_session("getPriceList", service.id, user_id)).css("elements element").collect { |price_xml| new(price_xml).tap(&:persist!) }
       end
     end
     

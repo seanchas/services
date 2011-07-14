@@ -4,26 +4,32 @@ module Infosell
     
     attr_reader :blocks
     
-    def self.all
-      cache do
-        xmlrpc_with_session("getServiceSet").collect { |attributes| new(attributes).tap(&:persist!) }
+    def self.all(user_id = '')
+      cache(user_id) do
+        xmlrpc_with_session("getServiceSet", user_id).collect { |attributes| new(user_id, attributes).tap(&:persist!) }
       end
     end
     
-    def self.find(param)
-      all.find { |service| service.to_param == param.to_s }
+    def self.find(param, user_id = '')
+      all(user_id).find { |service| service.to_param == param.to_s }
     end
     
-    def self.find_by_kind_and_type(kind, type)
-      all.detect { |service| service.kind == kind && service.type == type }
+    def self.find_by_kind_and_type(kind, type, user_id = '')
+      all(user_id).detect { |service| service.kind == kind && service.type == type }
     end
     
+    def initialize(user_id, attributes = {})
+      @user_id = user_id
+      Rails.logger.debug "ATTRIBUTES: #{attributes.inspect}"
+      super(attributes)
+    end
+
     def type
       attributes["type"]
     end
     
     def description
-      @description ||= Infosell::ServiceDescription.for(self)
+      @description ||= Infosell::ServiceDescription.for(self, @user_id)
     end
     
     def offer
@@ -35,7 +41,7 @@ module Infosell
     end
     
     def prices
-      @prices ||= Infosell::ServicePrice.for(self)
+      @prices ||= Infosell::ServicePrice.for(self, @user_id)
     end
     
     def prices?

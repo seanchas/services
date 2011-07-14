@@ -4,11 +4,12 @@ class ServicesController < ApplicationController
   
   # list all services
   def index
-    @services = Infosell::Service.all.select(&:accessible?)
+    @services = Infosell::Service.all((authenticated_user.try(:infosell_requisite) || '').to_param).select(&:accessible?)
   end
   
   # extended service description
   def show
+    
   end
   
   # service offer
@@ -24,7 +25,7 @@ class ServicesController < ApplicationController
 private
 
   def find_service
-    @service = Infosell::Service.find(params[:id])
+    @service = Infosell::Service.find(params[:id], (authenticated_user.try(:infosell_requisite) || '').to_param)
   end
   
 end
