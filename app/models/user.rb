@@ -54,7 +54,7 @@ class User < PassportModel
       end
     end
     
-    Passport::CertificateAuth.reset_permissions(user_id)
+    Passport::CertificateAuth.reset_permissions(to_param)
 
     true
   end
