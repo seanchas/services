@@ -20,7 +20,6 @@ module Infosell
     
     def initialize(user_id, attributes = {})
       @user_id = user_id
-      Rails.logger.debug "ATTRIBUTES: #{attributes.inspect}"
       super(attributes)
     end
 
