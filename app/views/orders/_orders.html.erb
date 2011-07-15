@@ -21,7 +21,7 @@
             <p class="delete_orders">
                 <%= link_to_function t(".delete"), "$('new_orders_list').submit()" %>
             </p>
-        <%- end -%>
+        <%- end unless orders.select(&:editable?).empty? -%>
     </div>
 
 <%- end -%>
