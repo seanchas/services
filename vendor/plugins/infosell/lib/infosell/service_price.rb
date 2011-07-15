@@ -9,11 +9,13 @@ module Infosell
     end
     
     def self.parse(xml)
+      Rails.logger.debug "XML: \n #{xml}"
       {
-        :id     => xml.attribute("id").content,
-        :title  => xml.at_css("title").content,
-        :prices => xml.css("prices price").collect { |node| Infosell::Model::Base.new(:label => node.attribute("label").content, :value => node.attribute("value").content) },
-        :links  => xml.css("links link").collect { |node| Infosell::Model::Base.new(:label => node.attribute("label").content, :url => node.attribute("url").content ) }
+        :id           => xml.attribute("id").content,
+        :title        => xml.at_css("title").content,
+        :description  => xml.at_css("description").content,
+        :prices       => xml.css("prices price").collect { |node| Infosell::Model::Base.new(:label => node.attribute("label").content, :value => node.attribute("value").content) },
+        :links        => xml.css("links link").collect { |node| Infosell::Model::Base.new(:label => node.attribute("label").content, :url => node.attribute("url").content ) }
       }
     end
     

@@ -18,6 +18,7 @@ en:
       title: 'Name'
       period: 'Period'
       price: 'Price (Rubles) per month'
+      trigger: 'Samples'
 
     notice:
       notice: |

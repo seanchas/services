@@ -18,6 +18,7 @@ ru:
       title: Наименование блока
       period: Срок подключения
       price: 'Тариф, рублей в месяц'
+      trigger: 'Образцы'
     
     notice:
       notice: |
