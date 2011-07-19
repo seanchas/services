@@ -20,4 +20,7 @@ en:
     
     requisite_type:
       title: 'Choose requisites type'
-    
+      hint: |
+        Resident - an individual or legal entity, registered and / or having permanent residence in the territory of the Russian Federation.
+        
+        Non-resident - an individual or legal entity, registered and / or having permanent residence outside the territory of the Russian Federation.
