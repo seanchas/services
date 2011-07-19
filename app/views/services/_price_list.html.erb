@@ -9,7 +9,7 @@
                     <%= t ".period" %>
                 </td>
                 <td class="price">
-                    <%= t ".price" %>
+                    <%= t ".price", :currency => t(@service.currency, :scope => [:currency, :genitive]) %>
                 </td>
             </tr>
         </thead>

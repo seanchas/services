@@ -4,11 +4,14 @@
             <table id="orders">
                 <thead>
                     <tr>
-                        <%- [:checkbox, :title, :created_at, :started_at, :finished_at, :accepted_at, :price].each do |column| -%>
+                        <%- [:checkbox, :title, :created_at, :started_at, :finished_at, :accepted_at].each do |column| -%>
                             <td class="<%= column %>">
                                 <%= t ".#{column}" %>
                             </td>
                         <%- end -%>
+						<td class="price">
+							<%= t ".price", :currency => t(orders.first.service.currency, :scope => [:currency, :short]) %>
+						</td>
                     </tr>
                 </thead>
                 <tbody>

@@ -22,7 +22,7 @@ ru:
     order_form_blocks:
       code:   'Код'
       title:  'Наименование'
-      price:  'Тариф, рублей в месяц'
+      price:  'Тариф, %{currency} в месяц'
     
     order_form_fields:
       ordered_from: 'Начало предоставления услуги'
@@ -47,7 +47,7 @@ ru:
       started_at:   'Начало оказания услуги'
       finished_at:  'Окончание оказания услуги'
       accepted_at:  'Дата счета'
-      price:        'Сумма, руб.'
+      price:        'Сумма, %{currency}'
       delete:       'Удалить выбранные заявки'
 
     order:

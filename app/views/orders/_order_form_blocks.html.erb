@@ -13,7 +13,7 @@
                     <%= t(".title") %>
                 </td>
                 <td>
-                    <%= t(".price") %>
+                    <%= t(".price", :currency => t(@order.service.currency, :scope => [:currency, :genitive])) %>
                 </td>
             </tr>
         </thead>

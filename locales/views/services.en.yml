@@ -17,7 +17,7 @@ en:
     price_list:
       title: 'Name'
       period: 'Period'
-      price: 'Price (Rubles) per month'
+      price: 'Price (%{currency}, per month, VAT included)'
       trigger: 'Samples'
 
     notice:

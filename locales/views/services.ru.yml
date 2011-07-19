@@ -17,7 +17,7 @@ ru:
     price_list:
       title: Наименование блока
       period: Срок подключения
-      price: 'Тариф, рублей в месяц'
+      price: 'Тариф, (%{currency} в месяц, включая НДС)'
       trigger: 'Образцы'
     
     notice:
