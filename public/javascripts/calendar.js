@@ -78,7 +78,7 @@ var Calendar = Class.create({
   
   update: function() {
     this.input.value = i18n.l(this.date, this.options['input_format']);
-    this.view.update(i18n.l(this.date, this.options['view_format']))
+    this.view.update(i18n.l(this.date, this.options['view_format']));
   },
   
   show: function() {
@@ -222,6 +222,7 @@ var Calendar = Class.create({
       this._input_date_parts  = null;
       this.update();
       this.hide();
+	  (this.options.updateCallback || Prototype.emptyFunction)(this.input.value);
     }
   },
   
