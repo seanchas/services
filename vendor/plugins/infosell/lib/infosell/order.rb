@@ -59,7 +59,7 @@ module Infosell
     end
 
     def known_attributes
-      @known_attributes ||= attributes.reverse_merge(fields)
+      attributes.reverse_merge(fields).keys
     end
     
     def accept_offer?

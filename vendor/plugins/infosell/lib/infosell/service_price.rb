@@ -9,7 +9,6 @@ module Infosell
     end
     
     def self.parse(xml)
-      Rails.logger.debug "XML: \n #{xml}"
       {
         :id           => xml.attribute("id").content,
         :title        => xml.at_css("title").content,

@@ -46,7 +46,7 @@ module Infosell
       end
     
       def known_attributes
-        @known_attributes ||= attributes
+        attributes.keys
       end
     
       def to_param
@@ -79,9 +79,9 @@ module Infosell
           when "="
             attributes[method_name.first(-1)] = args.first
           when "?"
-            !!known_attributes[method_name.first(-1)]
+            !!attributes[method_name.first(-1)]
           else
-            known_attributes.key?(method_name) ? known_attributes[method_name] : super
+            known_attributes.include?(method_name) ? attributes[method_name] : super
         end
       end
     
