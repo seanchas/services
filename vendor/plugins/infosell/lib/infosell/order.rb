@@ -138,6 +138,18 @@ module Infosell
       }
     end
     
+    def method_missing(name, *args, &block)
+      method_name = name.to_s
+      case method_name.last
+        when "="
+          super
+        when "?"
+          super
+        else
+          attributes.key?(method_name) ? attributes[method_name] : fields.key?(method_name) ? fields[method_name] : super
+      end
+    end
+
   end
 
 end
