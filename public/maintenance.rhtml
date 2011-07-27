@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>Сайт закрыт на техническое обслуживание | System down for maintenance</title>
+		<style type="text/css" media="screen">
+			
+			html,
+			body {
+				background-color: #fff;
+				margin: 0;
+				padding: 0;
+			}
+			
+			.dialog_wrapper {
+				height: 300px;
+				left: 50%;
+				margin-top: -150px;
+				margin-left: -260px;
+				position: absolute;
+				text-align: center;
+				top: 50%;
+				width: 500px;
+			}
+			
+			.dialog {
+				border: 1px solid #ccc;
+				margin: 0;
+				padding: 10px;
+				text-align: left;
+			}
+			
+			.content {
+				margin: 0 auto;
+				width: 300px;
+			}
+			
+			.notice {
+				color: #f00;
+				font-size: 16px;
+				line-height: 20px;
+			}
+			
+			.hint {
+				color: #666;
+				font-size: 15px;
+			}
+			
+		</style>
+	</head>
+	<body>
+
+		<div class="dialog_wrapper">
+			<div class="dialog">
+				<div class="content">
+					<p class="notice">
+						Сайт закрыт на техническое обслуживание
+						по состоянию на <%= Time.now.strftime("%H:%M %Z") %>.
+						<br />
+						The system is down for maintenance
+						as of <%= Time.now.strftime("%H:%M %Z") %>.
+					</p>
+					<p class="hint">
+						Скоро мы снова будем с вами.
+						<br />
+						It'll be back shortly.
+					</p>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>
