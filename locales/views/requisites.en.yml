@@ -10,14 +10,14 @@ en:
     
     create:
       success: 'Payment requisites created'
-      failure: 'Payment requisites create failed'
+      failure: 'Failed to create payment requisites'
 
     edit:
       title: Edit payment requisites
 
     update:
       success: 'Payment requisites updated'
-      failure: 'Payment requisites update failed'
+      failure: 'Failed to update payment requisites'
 
     payment_requisites:
       title: Choose requisite type
