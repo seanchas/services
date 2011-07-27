@@ -21,8 +21,10 @@ class RequisitesController < ApplicationController
 
     if @requisite.save
       authenticated_user.user_infosell_requisites.create(:infosell_code => @requisite.code)
+      flash[:notice] = t(:success, :scope => [:requisites, :create])
       redirect_to :requisite
     else
+      flash.now[:error] = t(:failure, :scope => [:requisites, :create])
       render :new
     end
   end
@@ -30,8 +32,10 @@ class RequisitesController < ApplicationController
   def update
     @requisite = authenticated_user.infosell_requisite
     if @requisite.update_attributes(params[:infosell_requisite])
+      flash[:notice] = t(:success, :scope => [:requisites, :update])
       redirect_to :requisite
     else
+      flash.now[:error] = t(:failure, :scope => [:requisites, :update])
       render :edit
     end
   end

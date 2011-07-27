@@ -8,8 +8,16 @@ en:
     new:
       title: New payment requisites
     
+    create:
+      success: 'Payment requisites created'
+      failure: 'Payment requisites create failed'
+
     edit:
       title: Edit payment requisites
+
+    update:
+      success: 'Payment requisites updated'
+      failure: 'Payment requisites update failed'
 
     payment_requisites:
       title: Choose requisite type
