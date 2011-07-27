@@ -57,6 +57,30 @@ namespace :deploy do
   
 end
 
+
+namespace :deploy do
+  namespace :web do
+    
+    task :disable, :roles => :web, :except => { :no_release => true } do
+      
+      require 'erb'
+      on_rollback { run "rm #{shared_path}/system/maintenance.html" }
+      
+      template  = File.read(File.join(File.dirname(__FILE__), "..", "public", "maintenance.rhtml"))
+      result    = ERB.new(template).result(binding)
+      
+      put result, "#{shared_path}/system/maintenance.html", :mode => 0644
+      
+    end
+    
+    task :enable, :roles => :web, :except => { :no_release => true } do
+      run "rm #{shared_path}/system/maintenance.html"
+    end
+  
+  end
+end
+
+
 before  "deploy:migrate",     "deploy:symlink_migration_configuration"
 after   "deploy:migrate",     "deploy:symlink_production_configuration"
 
