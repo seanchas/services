@@ -2,9 +2,9 @@ module Infosell
   
   class ServiceDescription < Infosell::Model::Base
     
-    def self.for(service)
-      cache(service.id) do
-        new(xmlrpc_with_session("getServiceDescription", service.id)).tap(&:persist!)
+    def self.for(service, user_id = '')
+      cache(service.id, user_id) do
+        new(xmlrpc_with_session("getServiceDescription", service.id, user_id)).tap(&:persist!)
       end
     end
     

@@ -9,7 +9,7 @@
                     <%= t ".period" %>
                 </td>
                 <td class="price">
-                    <%= t ".price" %>
+                    <%= t ".price", :currency => t(@service.currency, :scope => [:currency, :genitive]) %>
                 </td>
             </tr>
         </thead>
@@ -20,7 +20,11 @@
                         <h3>
                             <%= h list.title %>
                         </h3>
-                        <p class="links">
+						<p class="description">
+							<%= textilize_without_paragraph list.description %>
+						</p>
+						<%= link_to_function t(".trigger"), "$('links_#{list.id}').toggle();", :class => :trigger unless list.links.empty? %>
+                        <p class="links" style="display: none;" id="links_<%= list.id %>">
                             <%= list.links.collect { |link| link_to(h(link.label), link.url) }.join(", ") %>
                         </p>
                     </td>

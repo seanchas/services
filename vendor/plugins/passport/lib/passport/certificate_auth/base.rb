@@ -16,6 +16,11 @@ module Passport
       certificate(ActiveSupport::JSON.decode(connection(domain).get("/certificates.json?user_id=#{resource_id}")), domain)
     end
   
+    def self.reset_permissions(resource_id, domain = 'localhost')
+      domain = certificate_domain_for(domain)
+      connection(domain).get("/users/#{resource_id}.json?permissions=&_method=put")
+    end
+
   private
   
     def self.connection(uri)

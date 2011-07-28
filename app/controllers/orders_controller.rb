@@ -9,13 +9,13 @@ class OrdersController < ApplicationController
   end
   
   def new
-    service = Infosell::Service.find(params[:service_id])
+    service = Infosell::Service.find(params[:service_id], authenticated_user.infosell_requisite.to_param)
     redirect_to service_path(service) and return if service.blocks.empty?
     @order = Infosell::Order.new(service, authenticated_user.infosell_requisite)
   end
   
   def create
-    service = Infosell::Service.find(params[:service_id])
+    service = Infosell::Service.find(params[:service_id], authenticated_user.infosell_requisite.to_param)
     @order = Infosell::Order.new(service, authenticated_user.infosell_requisite, params[:infosell_order])
     @order.validate and return if request.xhr?
 

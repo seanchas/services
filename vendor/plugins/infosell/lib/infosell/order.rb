@@ -18,7 +18,7 @@ module Infosell
       options[:till]  ||= Time.now
       
       xmlrpc_with_session("getOrderList", requisite.id, [options[:state]].flatten.compact, options[:from].to_date.to_s(:db), options[:till].to_date.to_s(:db)).collect do |attributes|
-        service = Service.find_by_kind_and_type(attributes["kind"], attributes["type"])
+        service = Service.find_by_kind_and_type(attributes["kind"], attributes["type"], requisite.to_param)
         new(service, requisite, attributes).tap(&:persist!)
       end
     end
@@ -27,7 +27,7 @@ module Infosell
     def self.find(requisite, param)
       requisite   = Array(instance_or_find(requisite, Infosell::Requisite)).first
       attributes  = xmlrpc_with_session("getOrder", requisite.id, param)
-      service     = Service.find_by_kind_and_type(attributes["kind"], attributes["type"])
+      service     = Service.find_by_kind_and_type(attributes["kind"], attributes["type"], requisite.to_param)
 
       new(service, requisite, attributes).tap(&:persist!)
     end
@@ -59,7 +59,7 @@ module Infosell
     end
 
     def known_attributes
-      @known_attributes ||= attributes.reverse_merge(fields)
+      attributes.reverse_merge(fields).keys
     end
     
     def accept_offer?
@@ -138,6 +138,18 @@ module Infosell
       }
     end
     
+    def method_missing(name, *args, &block)
+      method_name = name.to_s
+      case method_name.last
+        when "="
+          super
+        when "?"
+          super
+        else
+          attributes.key?(method_name) ? attributes[method_name] : fields.key?(method_name) ? fields[method_name] : super
+      end
+    end
+
   end
 
 end

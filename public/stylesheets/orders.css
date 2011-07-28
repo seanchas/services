@@ -137,9 +137,23 @@ table.striped_table h3 {
   margin: 0;
 }
 
+
+table.striped_table p.description {
+	color: #4d4d4d;
+	font-size: .9em;
+}
+
+
 table.striped_table p.links {
   font-size: .9em;
-  margin: .25em 0 0;
+  margin: .5em 0 0;
+}
+
+table.striped_table a.trigger {
+	border-bottom: 1px dashed #4d4d4d;
+	color: #4d4d4d;
+	font-size: .9em;
+	text-decoration: none;
 }
 
 /* order fields */

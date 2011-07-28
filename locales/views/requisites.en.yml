@@ -8,8 +8,16 @@ en:
     new:
       title: New payment requisites
     
+    create:
+      success: 'Payment requisites created'
+      failure: 'Failed to create payment requisites'
+
     edit:
       title: Edit payment requisites
+
+    update:
+      success: 'Payment requisites updated'
+      failure: 'Failed to update payment requisites'
 
     payment_requisites:
       title: Choose requisite type
@@ -20,4 +28,7 @@ en:
     
     requisite_type:
       title: 'Choose requisites type'
-    
+      hint: |
+        *Resident* &mdash; an individual or legal entity, registered and / or having permanent residence in the territory of the Russian Federation.
+        
+        *Non-resident* &mdash; an individual or legal entity, registered and / or having permanent residence outside the territory of the Russian Federation.

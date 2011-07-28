@@ -1,0 +1,16 @@
+ru:
+  currency:
+    short:
+      eur: 'евро'
+      rub: 'руб.'
+    genitive:
+      eur: 'евро'
+      rub: 'рублей'
+en:
+  currency:
+    short:
+      eur: 'euro'
+      rub: 'rub.'
+    genitive:
+      eur: 'euro'
+      rub: 'rubles'
