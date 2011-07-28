@@ -9,7 +9,7 @@
 <script type="text/javascript" charset="utf-8">
     document.on("dom:loaded", function(e) {
 
-        var available_anchors   = [<%= @orders.collect(&:state).uniq.collect { |s| "'#{s}'"}.join(", ") %>];
+        var available_anchors   = $w('new opened closed');
         var current_anchor      = null;
         
         document.on("orders:anchor-changed", function(e) {
