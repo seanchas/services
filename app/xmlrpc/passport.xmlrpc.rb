@@ -13,7 +13,7 @@ namespace :passport do
       user = User.find_by_infosell_requisite(user_id)
       user.update_access_flags(resources)
     rescue Exception => e
-      Rails.logger.debug "Exception: #{e}"
+      MicexXMLRPC.logger.error "Exception in Passport XML-RPC: #{e}"
       raise XMLRPC::FaultException.new(301, user_id)
     end
   end
