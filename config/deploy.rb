@@ -9,10 +9,6 @@ set :deploy_via,  :copy
 
 set :scm, :git
 
-role :web, "blis1"
-role :app, "blis1"
-role :db,  "blis1", :primary => true
-
 set :bundle_cmd,  "/opt/gnu/ror/bin/bundle"
 require 'bundler/capistrano'
 
@@ -85,3 +81,7 @@ before  "deploy:migrate",     "deploy:symlink_migration_configuration"
 after   "deploy:migrate",     "deploy:symlink_production_configuration"
 
 after   "deploy:update_code", "deploy:update_configuration"
+
+set :stages,        [:beta, :production]
+set :default_stage, :beta
+require 'capistrano/ext/multistage'
