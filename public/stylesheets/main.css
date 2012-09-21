@@ -194,22 +194,25 @@ ul.tabbed_menu li {
 
 #header {
   background-color: #fff;
-  height: 50px;
+  height: 70px;
   padding: 0 10px;
   position: relative;
 }
 
 #header a.logo {
-  background: url(/images/logo.png) no-repeat center center;
-  display: block;
-  height: 24px;
-  left: 8px;
-  overflow: hidden;
-  padding-left: 198px;
-  position: absolute;
-  top: 13px;
-  width: 0;
+    background: url(http://rts.micex.ru/images/logo-ru_1.gif) no-repeat center center;
+    display: block;
+    height: 51px;
+    left: 8px;
+    overflow: hidden;
+    padding-left: 273px;
+    position: absolute;
+    top: 10px;
+    width: 0;
 }
+
+#header a.logo.ru {   background: url(http://rts.micex.ru/images/logo-ru_1.gif) no-repeat center center; }
+#header a.logo.en {   background: url(http://rts.micex.ru/images/logo-en_1.gif) no-repeat center center; }
 
 #header .authentication {
   float: right;

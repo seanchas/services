@@ -1,28 +1,27 @@
 ru:
   shared:
-    
-    passport_js:  'http://passport-beta.micex.ru/javascripts/passport.js'
-    passport_css: 'http://passport-beta.micex.ru/stylesheets/passport.css'
+
+    passport_js:  'https://passport.beta.micex.ru/javascripts/passport.js?locale=ru'
+    passport_css: 'https://passport.beta.micex.ru/stylesheets/passport.css'
 
     headline:
       domains:
-        - ['ММВБ',    'http://beta.micex.ru']
-        - ['Паспорт', 'http://passport-beta.micex.ru']
-        - ['Сервисы', 'http://services-local.micex.ru']
-        - ['PDA',     'http://pda-beta.micex.ru']
-        - ['Форумы',  'http://forums-beta.micex.ru']
-        - ['Музей',   'http://museum.micex.ru']
+        - ['Московская Биржа', 'http://rts.beta.micex.ru']
+        - ['Паспорт',          'http://passport.beta.micex.ru']
+        - ['Услуги',           'http://services.beta.micex.ru']
+        - ['Форум',            'http://forum.rts.micex.ru']
+        - ['Музей',            'http://museum.beta.micex.ru']
       locales:
         - [:ru, 'Русский']
         - [:en, 'English']
     
     header:
-      logo: 'ММВБ - MICEX'
+      logo: 'Московская Биржа'
 
-      profile:      'http://passport-local.micex.ru:3000/profile'
-      registration: ['Регистрация', 'http://passport-local.micex.ru:3000/registration']
-      login:        ['Вход',        'http://passport-local.micex.ru:3000/login']
-      logout:       ['Выход',       'http://passport-local.micex.ru:3000/logout']
+      profile:      'http://passport.beta.micex.ru/profile'
+      registration: ['Регистрация', 'http://passport.beta.micex.ru/registration']
+      login:        ['Вход', 'http://passport.beta.micex.ru/login']
+      logout:       ['Выход', 'http://passport.beta.micex.ru/logout']
 
     footer:
       copyright: |
@@ -34,18 +33,19 @@ ru:
       location: |
         г. Москва, Большой Кисловский пер. д. 13
         "Адрес на карте":http://adresa.yandex.ru/company.xml?company=105112633&region=1
+      copyright_me: |
+        Copyright &copy; "Московская Биржа":http://rts.beta.micex.ru, 2011 - %{year}. Все права на информацию и аналитические материалы, размещенные на настоящем интернет-представительстве Биржи, защищены в соответствии с российским законодательством. Воспроизведение, распространение и иное использование информации, размещенной на сайте Биржи, или ее части допускается только с предварительного письменного согласия Биржи.
     
     sidebar_links:
-      - ['Контакты',                            'http://www.micex.ru/services/marketdata/contacts']
-      - ['Образцы платежных документов',        'http://www.micex.ru/services/marketdata/payment_documents']
-      - ['Ответы на часто задаваемые вопросы',  'http://www.micex.ru/services/marketdata/faq']
-      - ['Micex Trade Info',                    'http://www.micex.ru/services/marketdata/software/micextradeinfo']
+      - ['Контакты',                            'http://beta.micex.ru/services/marketdata/contacts']
+      - ['Образцы платежных документов',        'http://beta.micex.ru/services/marketdata/payment_documents']
+      - ['Ответы на часто задаваемые вопросы',  'http://beta.micex.ru/services/marketdata/faq']
+      - ['Micex Trade Info',                    'http://beta.micex.ru/services/marketdata/software/micextradeinfo']
 
     admin:
       portals:
-        - ['Паспорт', 'http://passport-local.micex.ru:3000']
-    
+        - ['Паспорт', 'http://passport.beta.micex.ru/admin']
+
     homes:
-      - ['Паспорт', 'http://passport-local.micex.ru:3000/user']
-      - ['Сервисы', 'http://services-local.micex.ru:3000/requisite']
-      - ['Форумы',  'http://forums-local.micex.ru:3000/user']
+      - ['Управление платными услугами', 'http://services.beta.micex.ru/requisite']
+      - ['Настройки',                    'http://passport.beta.micex.ru/user']

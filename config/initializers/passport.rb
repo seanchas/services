@@ -12,9 +12,9 @@ Passport.configure do |passport|
   
   passport.logger = Rails.logger
   
-  passport.registration_url = "http://passport-beta.micex.ru/registration"
-  passport.login_url        = "http://passport-beta.micex.ru/login"
-  passport.logout_url       = "http://passport-beta.micex.ru/logout"
-  passport.profile_url      = "http://passport-beta.micex.ru/user"
+  passport.registration_url = "http://passport.beta.micex.ru/registration"
+  passport.login_url        = "http://passport.beta.micex.ru/login"
+  passport.logout_url       = "http://passport.beta.micex.ru/logout"
+  passport.profile_url      = "http://passport.beta.micex.ru/user"
   
 end
