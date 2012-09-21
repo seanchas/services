@@ -6,7 +6,7 @@ en:
       header: 'Registration'
       content: |
         *Attention*
-        In order to receive MICEX Trading Information, please:
+        In order to receive Moscow Exchange Trading Information, please:
       footer: >
         <a href="%{login_link}">Login</a> or <a href="%{registration_link}">register</a>
     
@@ -14,7 +14,7 @@ en:
       header: 'Payment requisites'
       content: |
         *Attention*
-        In order to receive MICEX Trading Information, please:
+        In order to receive Moscow Exchange Trading Information, please:
       footer: >
         <a href="%{link}">Fill in</a> your payment requisites
     
