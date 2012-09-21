@@ -1,3 +1,6 @@
+.rvmrc
+.powrc
+.idea
 .DS_Store
 log/*.log
 tmp/**/*
