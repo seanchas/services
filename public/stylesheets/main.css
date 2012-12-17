@@ -200,15 +200,15 @@ ul.tabbed_menu li {
 }
 
 #header a.logo {
-    background: url(http://rts.micex.ru/images/logo-ru_1.gif) no-repeat center center;
     display: block;
     height: 51px;
     left: 0;
     overflow: hidden;
-    padding-left: 250px;
+    padding: 0;
     position: absolute;
+    text-indent: -999px;
     top: 10px;
-    width: 0;
+    width: 250px;
 }
 
 #header a.logo.ru {   background: url(/images/logo_me_ru.png) no-repeat center left; }
