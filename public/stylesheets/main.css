@@ -203,7 +203,7 @@ ul.tabbed_menu li {
     background: url(http://rts.micex.ru/images/logo-ru_1.gif) no-repeat center center;
     display: block;
     height: 51px;
-    left: 8px;
+    left: 0;
     overflow: hidden;
     padding-left: 250px;
     position: absolute;
