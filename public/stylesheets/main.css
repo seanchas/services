@@ -205,14 +205,14 @@ ul.tabbed_menu li {
     height: 51px;
     left: 8px;
     overflow: hidden;
-    padding-left: 273px;
+    padding-left: 250px;
     position: absolute;
     top: 10px;
     width: 0;
 }
 
-#header a.logo.ru {   background: url(http://rts.micex.ru/images/logo-ru_1.gif) no-repeat center center; }
-#header a.logo.en {   background: url(http://rts.micex.ru/images/logo-en_1.gif) no-repeat center center; }
+#header a.logo.ru {   background: url(/images/logo_me_ru.png) no-repeat center left; }
+#header a.logo.en {   background: url(/images/logo_me_en.png) no-repeat center left; }
 
 #header .authentication {
   float: right;
