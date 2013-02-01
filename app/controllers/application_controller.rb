@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
   
   before_filter :authenticate
+
+  after_filter :clear_cache_control
   
   helper_method :authenticated_requisite, :authenticated_requisite?
   
@@ -45,6 +47,10 @@ protected
 
   def authenticated_requisite!
     redirect_to :root unless authenticated_requisite?
+  end
+
+  def clear_cache_control
+      response.headers.delete "Cache-Control"
   end
   
 end
