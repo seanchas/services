@@ -1,6 +1,8 @@
 .rvmrc
 .powrc
 .idea
+.ruby-version
+.rbenv-gemsets
 .DS_Store
 log/*.log
 tmp/**/*
