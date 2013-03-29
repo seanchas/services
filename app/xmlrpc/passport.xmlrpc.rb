@@ -22,4 +22,13 @@ namespace :passport do
     !!User.find_by_email(email)
   end
 
+  task :listInfosellCodes do |id, email|
+    User.find_by_email(email).try(:user_infosell_requisites).map do |requisite|
+      {
+        :code => requisite.infosell_code,
+        :current => !!requisite.is_current
+      }
+    end
+  end
+
 end
