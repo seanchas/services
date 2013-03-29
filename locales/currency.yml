@@ -2,15 +2,19 @@ ru:
   currency:
     short:
       eur: 'евро'
+      usd: 'дол.'
       rub: 'руб.'
     genitive:
       eur: 'евро'
+      usd: 'долларов'
       rub: 'рублей'
 en:
   currency:
     short:
       eur: 'euro'
+      usd: 'usd'
       rub: 'rub.'
     genitive:
       eur: 'euro'
+      usd: 'usd'
       rub: 'rubles'
