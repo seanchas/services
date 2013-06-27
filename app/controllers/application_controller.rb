@@ -27,12 +27,7 @@ protected
   end
   
   def set_default_locale
-    I18n.default_locale = case request.domain(0)
-      when "com"
-        :en
-      else
-        :ru
-    end
+    I18n.default_locale = :ru
   end
   
   def set_current_locale
