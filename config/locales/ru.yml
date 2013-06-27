@@ -1,16 +1,16 @@
 ru:
   shared:
 
-    passport_js:  'https://passport.beta.micex.ru/javascripts/passport.js?locale=ru'
-    passport_css: 'https://passport.beta.micex.ru/stylesheets/passport.css'
+    passport_js:  'https://passport.beta.moex.com/javascripts/passport.js?locale=ru'
+    passport_css: 'https://passport.beta.moex.com/stylesheets/passport.css'
 
     headline:
       domains:
-        - ['Московская Биржа', 'http://rts.beta.micex.ru']
-        - ['Паспорт',          'http://passport.beta.micex.ru']
-        - ['Услуги',           'http://services.beta.micex.ru']
-        - ['Форум',            'http://forum.rts.micex.ru']
-        - ['Музей',            'http://museum.beta.micex.ru']
+        - ['Московская Биржа', 'http://beta.moex.com']
+        - ['Паспорт',          'http://passport.beta.moex.com']
+        - ['Услуги',           'http://services.beta.moex.com']
+        - ['Форум',            'http://forum.moex.com']
+        - ['Музей',            'http://museum.beta.moex.com']
       locales:
         - [:ru, 'Русский']
         - [:en, 'English']
@@ -18,10 +18,10 @@ ru:
     header:
       logo: 'Московская Биржа'
 
-      profile:      'http://passport.beta.micex.ru/profile'
-      registration: ['Регистрация', 'http://passport.beta.micex.ru/registration']
-      login:        ['Вход', 'http://passport.beta.micex.ru/login']
-      logout:       ['Выход', 'http://passport.beta.micex.ru/logout']
+      profile:      'http://passport.beta.moex.com/profile'
+      registration: ['Регистрация', 'http://passport.beta.moex.com/registration']
+      login:        ['Вход', 'http://passport.beta.moex.ru/login']
+      logout:       ['Выход', 'http://passport.beta.moex.ru/logout']
 
     footer:
       copyright: |
@@ -34,7 +34,7 @@ ru:
         г. Москва, Большой Кисловский пер. д. 13
         "Адрес на карте":http://adresa.yandex.ru/company.xml?company=105112633&region=1
       copyright_me: |
-        Copyright &copy; "Московская Биржа":http://rts.beta.micex.ru, 2011 - %{year}. Все права на информацию и аналитические материалы, размещенные на настоящем интернет-представительстве Биржи, защищены в соответствии с российским законодательством. Воспроизведение, распространение и иное использование информации, размещенной на сайте Биржи, или ее части допускается только с предварительного письменного согласия Биржи.
+        Copyright &copy; "Московская Биржа":http://beta.moex.com, 2011 - %{year}. Все права на информацию и аналитические материалы, размещенные на настоящем интернет-представительстве Биржи, защищены в соответствии с российским законодательством. Воспроизведение, распространение и иное использование информации, размещенной на сайте Биржи, или ее части допускается только с предварительного письменного согласия Биржи.
     
     sidebar_links:
       - ['Контакты',                            'http://beta.micex.ru/services/marketdata/contacts']
@@ -44,8 +44,8 @@ ru:
 
     admin:
       portals:
-        - ['Паспорт', 'http://passport.beta.micex.ru/admin']
+        - ['Паспорт', 'http://passport.beta.moex.com/admin']
 
     homes:
-      - ['Управление платными услугами', 'http://services.beta.micex.ru/requisite']
-      - ['Настройки',                    'http://passport.beta.micex.ru/user']
+      - ['Управление платными услугами', 'http://services.beta.moex.com/requisite']
+      - ['Настройки',                    'http://passport.beta.moex.com/user']
