@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery
 
+  before_filter :redirect_to_default_domain
+
   before_filter :set_locale
   
   before_filter :authenticate
@@ -20,6 +22,11 @@ class ApplicationController < ActionController::Base
   end
 
 protected
+
+  # redirects from .ru to .com by default
+  def redirect_to_default_domain
+    redirect_to "#{request.protocol}#{request.host.split('.').slice(0...-1).push('com').join('.')}:#{request.port}#{request.request_uri}" if request.domain(0) == 'ru'
+  end
 
   def set_locale
     set_default_locale
