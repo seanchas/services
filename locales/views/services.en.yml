@@ -13,7 +13,7 @@ en:
 
     prices:
       title: 'Tariffs and samples'
-      notice: 'Please be advised that starting from April 1, 2013 <a href="http://fs.rts.micex.ru/f/906/me-market-data-tariffs-2013-execute-approved.pdf">new Tariffs for the Moscow Exchange Information Services come into force</a>.'
+      notice: 'Please be advised that starting from April 1, 2013 <a href="http://fs.moex.com/f/906/me-market-data-tariffs-2013-execute-approved.pdf">new Tariffs for the Moscow Exchange Information Services come into force</a>.'
 
     
     price_list:

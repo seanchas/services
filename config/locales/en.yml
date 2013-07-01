@@ -37,10 +37,10 @@ en:
         Copyright &copy; "Moscow Exchange":http://beta.moex.com/en, 2011 - %{year}. All the rights for the information and analytical materials published on this website are protected in compliance with the Russian legislation. Display, distribution or any other use of the information published on the Exchange’s website or any of its parts is allowed only upon receiving prior written authorization from the Exchange.
 
     sidebar_links:
-      - ['Contacts',          'http://beta.micex.com/services/marketdata/contacts']
-      - ['Samples',           'http://beta.micex.com/services/marketdata/payment_documents']
-      - ['FAQ',               'http://beta.micex.com/services/marketdata/faq']
-      - ['Micex Trade Info',  'http://beta.micex.com/services/marketdata/software/micextradeinfo']
+      - ['Contacts',          'http://www.moex.com/a1499']
+      - ['Samples',           'http://www.moex.com/a1502']
+      - ['FAQ',               'http://www.moex.com/a1500']
+      - ['Micex Trade Info',  'http://www.moex.com/a1501']
 
     homes:
       - ['Paid services management',  'http://services.beta.moex.com/en/requisite']

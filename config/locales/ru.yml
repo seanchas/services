@@ -37,10 +37,10 @@ ru:
         Copyright &copy; "Московская Биржа":http://beta.moex.com, 2011 - %{year}. Все права на информацию и аналитические материалы, размещенные на настоящем интернет-представительстве Биржи, защищены в соответствии с российским законодательством. Воспроизведение, распространение и иное использование информации, размещенной на сайте Биржи, или ее части допускается только с предварительного письменного согласия Биржи.
     
     sidebar_links:
-      - ['Контакты',                            'http://beta.micex.ru/services/marketdata/contacts']
-      - ['Образцы платежных документов',        'http://beta.micex.ru/services/marketdata/payment_documents']
-      - ['Ответы на часто задаваемые вопросы',  'http://beta.micex.ru/services/marketdata/faq']
-      - ['Micex Trade Info',                    'http://beta.micex.ru/services/marketdata/software/micextradeinfo']
+      - ['Контакты',                            'http://www.moex.com/a1491']
+      - ['Образцы платежных документов',        'http://www.moex.com/a1492']
+      - ['Ответы на часто задаваемые вопросы',  'http://www.moex.com/a1493']
+      - ['Micex Trade Info',                    'http://www.moex.com/a1494']
 
     admin:
       portals:
