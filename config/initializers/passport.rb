@@ -4,7 +4,7 @@ Passport.configure do |passport|
   passport.resource :user
   
   passport.certificate_auth do
-    domains "http://beta.micex.ru", "http://beta.micex.com"
+    domains "http://beta.micex.ru", "http://beta.micex.com", "http://beta.moex.ru", "http://beta.moex.com"
     prefix  "passport-manager"
   end
   
@@ -12,9 +12,9 @@ Passport.configure do |passport|
   
   passport.logger = Rails.logger
   
-  passport.registration_url = "http://passport.beta.micex.ru/registration"
-  passport.login_url        = "http://passport.beta.micex.ru/login"
-  passport.logout_url       = "http://passport.beta.micex.ru/logout"
-  passport.profile_url      = "http://passport.beta.micex.ru/user"
+  passport.registration_url = "http://passport.beta.moex.com/registration"
+  passport.login_url        = "http://passport.beta.moex.com/login"
+  passport.logout_url       = "http://passport.beta.moex.com/logout"
+  passport.profile_url      = "http://passport.beta.moex.com/user"
   
 end

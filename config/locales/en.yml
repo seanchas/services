@@ -1,16 +1,16 @@
 en:
   shared:
 
-    passport_js:  'https://passport.beta.micex.ru/javascripts/passport.js?locale=en'
-    passport_css: 'https://passport.beta.micex.ru/stylesheets/passport.css'
+    passport_js:  'https://passport.beta.moex.com/javascripts/passport.js?locale=en'
+    passport_css: 'https://passport.beta.moex.com/stylesheets/passport.css'
 
     headline:
       domains:
-        - ['Moscow Exchange', 'http://rts.beta.micex.com']
-        - ['Passport',        'http://passport.beta.micex.com']
-        - ['Services',        'http://services.beta.micex.com']
-        - ['Forum',           'http://forum.rts.micex.ru/']
-        - ['Museum',          'http://museum.beta.micex.ru']
+        - ['Moscow Exchange', 'http://beta.moex.com/en']
+        - ['Passport',        'http://passport.beta.moex.com/en']
+        - ['Services',        'http://services.beta.moex.com/en']
+        - ['Forum',           'http://forum.moex.com/']
+        - ['Museum',          'http://museum.beta.moex.com']
       locales:
         - [:ru, 'Русский']
         - [:en, 'English']
@@ -18,10 +18,10 @@ en:
     header:
       logo: 'Moscow Exchange'
       
-      profile:      'http://passport.beta.micex.com/profile'
-      registration: ['Registration',  'http://passport.beta.micex.com/registration']
-      login:        ['Login',         'http://passport.beta.micex.com/login']
-      logout:       ['Logout',        'http://passport.beta.micex.com/logout']
+      profile:      'http://passport.beta.moex.com/en/profile'
+      registration: ['Registration',  'http://passport.beta.moex.com/en/registration']
+      login:        ['Login',         'http://passport.beta.moex.com/en/login']
+      logout:       ['Logout',        'http://passport.beta.moex.com/en/logout']
 
     footer:
       copyright: |
@@ -34,14 +34,14 @@ en:
         Moscow, Bolshoy Kislovskiy per., 13
         "MICEX on the map":http://adresa.yandex.ru/company.xml?company=105112633&region=1
       copyright_me: |
-        Copyright &copy; "Moscow Exchange":http://rts.beta.micex.ru/en, 2011 - %{year}. All the rights for the information and analytical materials published on this website are protected in compliance with the Russian legislation. Display, distribution or any other use of the information published on the Exchange’s website or any of its parts is allowed only upon receiving prior written authorization from the Exchange.
+        Copyright &copy; "Moscow Exchange":http://beta.moex.com/en, 2011 - %{year}. All the rights for the information and analytical materials published on this website are protected in compliance with the Russian legislation. Display, distribution or any other use of the information published on the Exchange’s website or any of its parts is allowed only upon receiving prior written authorization from the Exchange.
 
     sidebar_links:
-      - ['Contacts',          'http://beta.micex.com/services/marketdata/contacts']
-      - ['Samples',           'http://beta.micex.com/services/marketdata/payment_documents']
-      - ['FAQ',               'http://beta.micex.com/services/marketdata/faq']
-      - ['Micex Trade Info',  'http://beta.micex.com/services/marketdata/software/micextradeinfo']
+      - ['Contacts',          'http://www.moex.com/a1499']
+      - ['Samples',           'http://www.moex.com/a1502']
+      - ['FAQ',               'http://www.moex.com/a1500']
+      - ['Micex Trade Info',  'http://www.moex.com/a1501']
 
     homes:
-      - ['Paid services management',  'http://services.beta.micex.com/requisite']
-      - ['Settings',                  'http://passport.beta.micex.com/user']
+      - ['Paid services management',  'http://services.beta.moex.com/en/requisite']
+      - ['Settings',                  'http://passport.beta.moex.com/en/user']
