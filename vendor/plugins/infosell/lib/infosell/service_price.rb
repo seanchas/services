@@ -10,9 +10,9 @@ module Infosell
     
     def self.parse(xml)
       {
-        :id           => xml.attribute("id").content,
-        :title        => xml.at_css("title").content,
-        :description  => xml.at_css("description").content,
+        :id           => xml.attribute("id").try(:content),
+        :title        => xml.at_css("title").try(:content),
+        :description  => xml.at_css("description").try(:content),
         :prices       => xml.css("prices price").collect { |node| Infosell::Model::Base.new(:label => node.attribute("label").content, :value => node.attribute("value").content) },
         :links        => xml.css("links link").collect { |node| Infosell::Model::Base.new(:label => node.attribute("label").content, :url => node.attribute("url").content ) }
       }

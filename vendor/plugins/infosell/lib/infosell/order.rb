@@ -134,7 +134,9 @@ module Infosell
         :block_ids    => blocks.collect(&:id),
         :duration     => duration,
         :ordered_from => ordered_from.to_date.to_s(:db),
-        :connections  => (connections rescue 0)
+        :connections  => (connections rescue 0),
+        :from         => (from rescue ''),
+        :till         => (till rescue '')
       }
     end
     

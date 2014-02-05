@@ -1,0 +1,80 @@
+/* CALENDAR.CSS */
+
+.calendar {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 250px;
+  z-index: 1000;
+}
+
+.calendar .inner {
+  background: #fff;
+  border: 2px solid #c0d1ec;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .25);
+  -moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, .25);
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, .25);
+  margin: 0;
+  text-align: center;
+  position: relative;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+.calendar table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 12px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.calendar th,
+.calendar td {
+  color: #000;
+  font-size: 11px;
+  line-height: 16px;
+  margin: 0;
+  padding: 2px 1px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.calendar th {
+  color: #999;
+  font-weight: normal;
+  height: 20px;
+}
+
+.calendar .links,
+.calendar .title {
+  font-weight: bold;
+}
+
+.calendar .week td {
+  background: #e0e8f6;
+  border-bottom: 2px solid #fff;
+}
+
+.calendar .week td.today {
+  background: #ffe18f;
+}
+
+.calendar .week td.other {
+  background: #fff;
+  color: #999;
+}
+
+.calendar .week td.selected {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+.calendar .week td:hover,
+.calendar .week td.hover,
+.calendar .links td:hover,
+.calendar .links td.hover {
+  background: #c6d6ee;
+  cursor: pointer;
+}
+
