@@ -3,7 +3,7 @@ class AuthorizedUrl < PassportModel
   has_many :authorized_url_infosell_resources
   
   def self.find_by_infosell_resources(*ids)
-    find(AuthorizedUrlInfosellResource.find_all_by_elementary_resource_id(ids).collect(&:authorized_url_id).flatten.compact.uniq)
+    find_all_by_id(AuthorizedUrlInfosellResource.find_all_by_elementary_resource_id(ids).collect(&:authorized_url_id).flatten.compact.uniq)
   end
 
   def infosell_resources_codes
