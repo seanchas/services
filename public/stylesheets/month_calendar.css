@@ -1,6 +1,6 @@
 /* CALENDAR.CSS */
 
-.calendar {
+.month_calendar {
   left: 0;
   position: absolute;
   top: 0;
@@ -8,7 +8,7 @@
   z-index: 1000;
 }
 
-.calendar .inner {
+.month_calendar .inner {
   background: #fff;
   border: 2px solid #c0d1ec;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, .25);
@@ -21,7 +21,7 @@
   width: 100%;
 }
 
-.calendar table {
+.month_calendar table {
   border-collapse: collapse;
   border-spacing: 0;
   font-size: 12px;
@@ -29,8 +29,8 @@
   width: 100%;
 }
 
-.calendar th,
-.calendar td {
+.month_calendar th,
+.month_calendar td {
   color: #000;
   font-size: 11px;
   line-height: 16px;
@@ -40,40 +40,35 @@
   vertical-align: middle;
 }
 
-.calendar th {
+.month_calendar th {
   color: #999;
   font-weight: normal;
   height: 20px;
 }
 
-.calendar .links,
-.calendar .title {
+.month_calendar .links,
+.month_calendar .title {
   font-weight: bold;
 }
 
-.calendar .week td {
+.month_calendar .row td {
   background: #e0e8f6;
-  border-bottom: 2px solid #fff;
+  border: 2px solid #fff;
 }
 
-.calendar .week td.today {
+.month_calendar .row td.current {
   background: #ffe18f;
 }
 
-.calendar .week td.other {
-  background: #fff;
-  color: #999;
-}
-
-.calendar .week td.selected {
+.month_calendar .row td.selected {
   background: #000 !important;
   color: #fff !important;
 }
 
-.calendar .week td:hover,
-.calendar .week td.hover,
-.calendar .links td:hover,
-.calendar .links td.hover {
+.month_calendar .row td:hover,
+.month_calendar .row td.hover,
+.month_calendar .links td:hover,
+.month_calendar .links td.hover {
   background: #c6d6ee;
   cursor: pointer;
 }

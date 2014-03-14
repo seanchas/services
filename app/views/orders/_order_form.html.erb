@@ -30,7 +30,7 @@
             input.hide();
             var view = new Element('span', { 'class': 'month_calendar_view' });
             input.insert({before: view});
-            new MonthCalendar(view, input, { view_format: 'order_form', updateCallback: validate });
+            new MonthCalendar(view, input, { view_format: 'order_form_wo_day', updateCallback: validate });
         });
         
         $('order_form').on('change', function(e) {

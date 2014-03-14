@@ -163,13 +163,15 @@ form.requisite textarea {
 
 /* calendar view */
 
-form span.calendar_view {
+form span.calendar_view,
+form span.month_calendar_view {
   border-bottom: 1px dashed #006299;
   color: #006299;
   cursor: pointer;
 }
 
-form span.calendar_view:hover {
+form span.calendar_view:hover,
+form span.month_calendar_view:hover {
   border-color: #f02b00;
   color: #f02b00;
 }
