@@ -119,7 +119,7 @@ module Infosell
     end
     
     def create
-      # self.class.xmlrpc_with_session("getUserOffer",   requisite.id, service.id) if accept_offer?
+      self.class.xmlrpc_with_session("getUserOffer",   requisite.id, service.id) if accept_offer?
       self.class.xmlrpc_with_session("applyUserOffer", requisite.id, service.id) if accept_offer?
       self.class.xmlrpc_with_session("addOrder", requisite.id, to_infosell)
     end
