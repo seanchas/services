@@ -34,7 +34,7 @@ en:
         Moscow, Bolshoy Kislovskiy per., 13
         "MICEX on the map":http://adresa.yandex.ru/company.xml?company=105112633&region=1
       copyright_me: |
-        Copyright &copy; "Moscow Exchange":http://beta.moex.com/en, 2011 - %{year}. All the rights for the information and analytical materials published on this website are protected in compliance with the Russian legislation. Before to start exploring content of the web site we strongly recommend to read through the "User Agreement":http://assets.beta.moex.com/agreements/en/agreement.pdf. Display, distribution or any other use of the information published on the Exchange’s website or any of its parts is allowed only upon receiving prior written authorization from the Exchange.
+        Copyright &copy; "Moscow Exchange":http://beta.moex.com/en, 2011 - %{year}. All the rights for the information and analytical materials published on this website are protected in compliance with the Russian legislation. Before to start exploring content of the web site we strongly recommend to read through the "User Agreement":http://assets.moex.com/agreements/en/agreement.pdf. Display, distribution or any other use of the information published on the Exchange’s website or any of its parts is allowed only upon receiving prior written authorization from the Exchange.
 
     sidebar_links:
       - ['Contacts',          'http://www.moex.com/a1499']
