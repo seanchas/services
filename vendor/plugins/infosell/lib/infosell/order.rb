@@ -132,7 +132,7 @@ module Infosell
       {
         :service_id   => service.id,
         :block_ids    => blocks.collect(&:id),
-        :duration     => duration,
+        :duration     => (duration rescue 0),
         :ordered_from => ordered_from.to_date.to_s(:db),
         :connections  => (connections rescue 0),
         :from         => (from rescue ''),
