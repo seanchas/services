@@ -44,6 +44,8 @@ en:
       ordered_from: 'Desired start date'
       duration: 'Duration'
       connections: 'Connections'
+      from: 'Begin of archive period'
+      till: 'End of archive period'
 
     order_form_totals:
       total: 'Total'

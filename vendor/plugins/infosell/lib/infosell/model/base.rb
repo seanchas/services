@@ -18,7 +18,9 @@ module Infosell
       end
     
       def self.xmlrpc_with_session(name, *args)
-        proxy.xmlrpc(name, proxy.session, *args)
+        response = proxy.xmlrpc(name, proxy.session, *args)
+        # Rails.logger.info "\n\n----\nname: #{name}, ARGS: #{args.inspect}\nresponse: #{response.inspect}\n----\n\n"
+        response
       end
       
       def self.instance_or_find(param, klass)

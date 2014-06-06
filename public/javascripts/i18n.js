@@ -15,7 +15,8 @@ var i18n = {
       
       formats: {
         'default': '',
-        'order_form': '%e %B %Y г.'
+        'order_form': '%e %B %Y г.',
+        'order_form_wo_day': '%B, %Y г.'
       }
     }
     
@@ -32,7 +33,8 @@ var i18n = {
       
       formats: {
         'default': '',
-        'order_form': '%e %B %Y'
+        'order_form': '%e %B %Y',
+        'order_form_wo_day': '%B, %Y'
       }
     }
     

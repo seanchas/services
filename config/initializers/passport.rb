@@ -4,7 +4,7 @@ Passport.configure do |passport|
   passport.resource :user
   
   passport.certificate_auth do
-    domains "http://beta.micex.ru", "http://beta.micex.com", "http://beta.moex.ru", "http://beta.moex.com"
+    domains "http://www.beta.micex.ru", "http://www.beta.micex.com", "http://www.beta.moex.ru", "http://www.beta.moex.com"
     prefix  "passport-manager"
   end
   

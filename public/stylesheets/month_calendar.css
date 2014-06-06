@@ -1,0 +1,75 @@
+/* CALENDAR.CSS */
+
+.month_calendar {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 250px;
+  z-index: 1000;
+}
+
+.month_calendar .inner {
+  background: #fff;
+  border: 2px solid #c0d1ec;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .25);
+  -moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, .25);
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, .25);
+  margin: 0;
+  text-align: center;
+  position: relative;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+.month_calendar table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 12px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.month_calendar th,
+.month_calendar td {
+  color: #000;
+  font-size: 11px;
+  line-height: 16px;
+  margin: 0;
+  padding: 2px 1px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.month_calendar th {
+  color: #999;
+  font-weight: normal;
+  height: 20px;
+}
+
+.month_calendar .links,
+.month_calendar .title {
+  font-weight: bold;
+}
+
+.month_calendar .row td {
+  background: #e0e8f6;
+  border: 2px solid #fff;
+}
+
+.month_calendar .row td.current {
+  background: #ffe18f;
+}
+
+.month_calendar .row td.selected {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+.month_calendar .row td:hover,
+.month_calendar .row td.hover,
+.month_calendar .links td:hover,
+.month_calendar .links td.hover {
+  background: #c6d6ee;
+  cursor: pointer;
+}
+

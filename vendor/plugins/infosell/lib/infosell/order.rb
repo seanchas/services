@@ -97,7 +97,6 @@ module Infosell
     def validate
       parameters = to_infosell
       parameters[:id] = id unless new_record?
-      puts parameters.inspect
       self.attributes = self.class.xmlrpc_with_session("getUserCartInfo", requisite.id, parameters)
     rescue XMLRPC::FaultException => e
       errors.add(:base, e.faultString)
@@ -120,6 +119,7 @@ module Infosell
     end
     
     def create
+      self.class.xmlrpc_with_session("getUserOffer",   requisite.id, service.id) if accept_offer?
       self.class.xmlrpc_with_session("applyUserOffer", requisite.id, service.id) if accept_offer?
       self.class.xmlrpc_with_session("addOrder", requisite.id, to_infosell)
     end
@@ -132,9 +132,11 @@ module Infosell
       {
         :service_id   => service.id,
         :block_ids    => blocks.collect(&:id),
-        :duration     => duration,
+        :duration     => (duration rescue 0),
         :ordered_from => ordered_from.to_date.to_s(:db),
-        :connections  => (connections rescue 0)
+        :connections  => (connections rescue 0),
+        :from         => (from rescue ''),
+        :till         => (till rescue '')
       }
     end
     

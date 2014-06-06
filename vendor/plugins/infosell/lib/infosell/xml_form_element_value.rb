@@ -77,7 +77,12 @@ module Infosell
     module Date
 
       def parse
-        self.value = value.first.content.to_date
+        self.value =
+            begin
+              value.first.content.to_date
+            rescue
+              ::Date.new(::Date.send(:now).year, ::Date.send(:now).month, 1).strftime("%Y-%m-%d")
+            end
       end
       
       def tag
@@ -88,6 +93,42 @@ module Infosell
         { :"data-format" => "calendar", :style => "display: none;" }
       end
       
+    end
+
+    module From
+      include Infosell::XMLFormElementValue::Date
+
+      def parse
+        self.value =
+            begin
+              value.first.content.to_date
+            rescue
+              two_months_ago = ::Date.send(:now) - 2.months
+              ::Date.new(two_months_ago.year, two_months_ago.month, 1).strftime("%Y-%m-%d")
+            end
+      end
+
+      def options_for_tag
+        { :"data-format" => "month-calendar", :style => "display: none;" }
+      end
+    end
+
+    module Till
+      include Infosell::XMLFormElementValue::Date
+
+      def parse
+        self.value =
+            begin
+              value.first.content.to_date
+            rescue
+              month_ago = ::Date.send(:now) - 1.month
+              ::Date.new(month_ago.year, month_ago.month, 1).strftime("%Y-%m-%d")
+            end
+      end
+
+      def options_for_tag
+        { :"data-format" => "month-calendar", :style => "display: none;" }
+      end
     end
     
     
