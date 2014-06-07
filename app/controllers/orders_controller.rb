@@ -45,8 +45,12 @@ class OrdersController < ApplicationController
   end
   
   def destroy_many
-    Infosell::Order.destroy(authenticated_user.infosell_requisite, *params[:id])
-    redirect_to :orders
+    begin
+      Infosell::Order.destroy(authenticated_user.infosell_requisite, *params[:id])
+    rescue
+    ensure
+      redirect_to :orders
+    end
   end
   
 end
