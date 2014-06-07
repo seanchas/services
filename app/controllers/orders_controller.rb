@@ -47,10 +47,11 @@ class OrdersController < ApplicationController
   def destroy_many
     begin
       Infosell::Order.destroy(authenticated_user.infosell_requisite, *params[:id])
-    rescue
-    ensure
-      redirect_to :orders
+    rescue XMLRPC::FaultException => e
+      redirect_to :orders, :flash => { :error => e.message }
+      return
     end
+    redirect_to :orders
   end
   
 end
