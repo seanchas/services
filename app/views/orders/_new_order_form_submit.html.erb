@@ -13,4 +13,24 @@
             </td>
         </tr>
     </table>
+
+    <script type="text/javascript">
+        document.observe("dom:loaded", function(e) {
+
+            var submit = $$('#order_form input[type=submit]')[0];
+            var offer  = $$('#order_form input[type=checkbox]#infosell_order_accept_offer')[0];
+
+            toggle_submit = function () {
+                if($(offer).checked) $(submit).enable();
+                else $(submit).disable();
+            };
+
+            toggle_submit();
+
+            $(offer).on('change', function(e) { toggle_submit() });
+            $(offer).on('click',  function(e) { toggle_submit() });
+
+        });
+    </script>
+
 </div>

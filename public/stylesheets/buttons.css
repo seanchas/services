@@ -41,3 +41,15 @@ input[type=submit]:active {
   text-shadow: -1px -1px 0 rgba(0, 0, 0, .3);
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#0770a0', endColorstr='#0ca6dd');
 }
+
+input[type=submit]:disabled,
+input[type=submit]:hover:disabled {
+    background: #f0f0f0;
+    border-bottom-color: #ccc;
+    color: #ccc;
+    text-shadow: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow:    none;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
